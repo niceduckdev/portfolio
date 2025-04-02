@@ -1,0 +1,30 @@
+---
+import Link from "@components/link.astro";
+import "../styles.css";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <title>niceduck.dev</title>
+    </head>
+    <body
+        class="font-sans bg-gruvbox-bg text-gruvbox-fg-2 text-lg m-auto max-w-3xl font-bold py-3 px-5 cursor-default flex flex-col h-screen justify-between gap-4"
+    >
+        <main class="flex flex-col gap-4">
+            <nav class="flex flex-col">
+                <h1 class="text-3xl text-gruvbox-accent font-bold">niceduckdev</h1>
+                <h2>Student & Software Developer</h2>
+            </nav>
+            <slot />
+        </main>
+        <footer>
+            <p>
+                <Link href="/projects/portfolio">Created</Link> by niceduckdev
+            </p>
+        </footer>
+    </body>
+</html>

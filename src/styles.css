@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Nunito", "sans-serif";
+    --color-gruvbox-bg: #282828;
+    --color-gruvbox-fg: #ebdbb2;
+    --color-gruvbox-fg-2: #7c6f64;
+    --color-gruvbox-accent: #d79921;
+}
+
+#content a {
+    @apply hover:text-gruvbox-accent transition-colors underline cursor-pointer;
+}
+
+#content img {
+    @apply border-gruvbox-fg-2 border-2 rounded-lg;
+}

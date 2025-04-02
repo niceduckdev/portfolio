@@ -1,0 +1,47 @@
+---
+import Card from "@components/card.astro";
+import Link from "@components/link.astro";
+import Title from "@components/title.astro";
+import Page from "@layouts/page.astro";
+import { formatDate } from "@lib/date";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+const projects = await getCollection("projects");
+---
+
+<Page>
+    <section class="flex flex-col gap-1">
+        <Title>about me</Title>
+        <section class="flex flex-col">
+            <p>
+                My name is niceduckdev! I am a student at KdG in Antwerp and I love making games, websites and spending
+                time creating other technological stuff.
+            </p>
+            <p>
+                You can contact me at <Link href="mailto:contact@niceduck.dev" target="_blank"
+                    >contact@niceduck.dev</Link
+                >.
+            </p>
+        </section>
+    </section>
+
+    <section class="flex flex-col gap-1">
+        <Title>projects</Title>
+        <section class="flex flex-col">
+            {
+                projects.map((project: any) => (
+                    <Card
+                        title={project.data.title}
+                        date={formatDate(project.data.date)}
+                        href={`/projects/${project.data.title
+                            .toLowerCase()
+                            .replaceAll(" ", "-")
+                            .replaceAll('"', "")
+                            .replaceAll("'", "")}`}
+                    />
+                ))
+            }
+        </section>
+    </section>
+</Page>

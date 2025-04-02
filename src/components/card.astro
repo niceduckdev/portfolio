@@ -1,0 +1,9 @@
+---
+import Link from "./link.astro";
+const { title, date, href } = Astro.props;
+---
+
+<article class="flex flex-row justify-between">
+    <Link href={href}><h3>{title}</h3></Link>
+    <p>{date}</p>
+</article>

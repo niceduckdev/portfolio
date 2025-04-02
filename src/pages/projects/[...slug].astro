@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from "astro:content";
+import Project from "@layouts/project.astro";
+import Link from "@components/link.astro";
+import Title from "@components/title.astro";
+import { formatDate } from "@lib/date";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("projects");
+    return posts.map((post) => ({
+        params: { slug: post.data.title.toLowerCase().replaceAll(" ", "-").replaceAll('"', "").replaceAll("'", "") },
+        props: { post },
+    }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Project>
+    <span>
+        <Link href="/">Back</Link>
+    </span>
+    <section>
+        <Title>{post.data.title}</Title>
+        <p>{formatDate(post.data.date)}</p>
+    </section>
+    <Content />
+</Project>
