@@ -26,6 +26,25 @@ const projects = await getCollection("projects");
         </section>
     </section>
 
+	<section class="flex flex-col gap-1">
+        <Title>posts</Title>
+        <section class="flex flex-col">
+            {
+                posts.map((post: any) => (
+                    <Card
+                        title={post.data.title}
+                        date={formatDate(post.data.date)}
+                        href={`/posts/${post.data.title
+                            .toLowerCase()
+                            .replaceAll(" ", "-")
+                            .replaceAll('"', "")
+                            .replaceAll("'", "")}`}
+                    />
+                ))
+            }
+        </section>
+
+
     <section class="flex flex-col gap-1">
         <Title>projects</Title>
         <section class="flex flex-col">
