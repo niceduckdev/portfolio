@@ -12,16 +12,12 @@ import "../styles.css";
         <title>niceduck.dev</title>
     </head>
     <body
-        class="font-sans bg-gruvbox-bg text-gruvbox-fg-2 text-lg m-auto max-w-3xl font-bold py-3 px-5 cursor-default flex flex-col h-screen justify-between gap-4"
+        class="font-sans bg-gruvbox-bg text-gruvbox-fg-2 text-lg m-auto max-w-3xl font-bold pt-3 px-5 cursor-default flex flex-col h-screen justify-between gap-4"
     >
         <main class="flex flex-col gap-4">
-            <nav class="flex flex-col">
-                <h1 class="text-3xl text-gruvbox-accent font-bold">niceduckdev</h1>
-                <h2>Student & Software Developer</h2>
-            </nav>
             <slot />
         </main>
-        <footer>
+        <footer class="pb-2">
             <p>
                 <Link href="/projects/portfolio">Handcrafted</Link> by niceduckdev
             </p>

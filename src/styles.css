@@ -14,9 +14,9 @@
 }
 
 #content img {
-    @apply border-gruvbox-fg-2 border-2 rounded-lg;
+    @apply border-gruvbox-fg-2 border-2 rounded-lg my-2;
 }
 
 #content code {
-    @apply text-sm w-full sm:text-base inline-flex text-left items-center space-x-4 border-2 border-gruvbox-fg-2 bg-gruvbox-bg text-gruvbox-fg rounded-lg p-4 pl-6;
+    @apply text-sm w-full sm:text-base inline-flex text-left items-center space-x-4 border-2 border-gruvbox-fg-2 bg-gruvbox-bg text-gruvbox-fg rounded-lg p-4 pl-6 my-2;
 }

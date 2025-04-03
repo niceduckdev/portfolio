@@ -1,9 +1,10 @@
 ---
 import { getCollection, render } from "astro:content";
-import Layout from "@layouts/file.astro";
+import Page from "@layouts/page.astro";
 import Link from "@components/link.astro";
 import Title from "@components/title.astro";
 import { formatDate } from "@lib/date";
+import { getTime } from "@lib/time";
 
 export async function getStaticPaths() {
     const posts = await getCollection("projects");
@@ -16,13 +17,17 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout>
-    <span>
-        <Link href="/">Back</Link>
-    </span>
-    <section>
-        <Title>{post.data.title}</Title>
-        <p>{formatDate(post.data.date)}</p>
-    </section>
-    <Content />
-</Layout>
+<Page>
+    <div id="content" class="flex flex-col gap-2">
+        <span><Link href="/">← Back</Link></span>
+
+        <section>
+            <Title>{post.data.title}</Title>
+            <section class="flex gap-3">
+                <p>{formatDate(post.data.date)}</p>
+                <p>{getTime(post.body)} min read</p>
+            </section>
+        </section>
+        <Content />
+    </div>
+</Page>

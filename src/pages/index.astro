@@ -11,6 +11,11 @@ const projects = await getCollection("projects");
 ---
 
 <Page>
+    <nav class="flex flex-col">
+        <h1 class="text-3xl text-gruvbox-accent font-bold">niceduckdev</h1>
+        <h2>Student & Software Developer</h2>
+    </nav>
+
     <section class="flex flex-col gap-1">
         <Title>about me</Title>
         <section class="flex flex-col">
@@ -26,7 +31,7 @@ const projects = await getCollection("projects");
         </section>
     </section>
 
-	<section class="flex flex-col gap-1">
+    <section class="flex flex-col gap-1">
         <Title>posts</Title>
         <section class="flex flex-col">
             {
@@ -43,7 +48,7 @@ const projects = await getCollection("projects");
                 ))
             }
         </section>
-
+    </section>
 
     <section class="flex flex-col gap-1">
         <Title>projects</Title>
