@@ -3,20 +3,26 @@
 
 @theme {
     --font-sans: "Nunito", "sans-serif";
+    
     --color-gruvbox-bg: #282828;
     --color-gruvbox-fg: #ebdbb2;
     --color-gruvbox-fg-2: #7c6f64;
     --color-gruvbox-accent: #d79921;
+
+    --color-gruvbox-bg-l: #fbf1c7;
+    --color-gruvbox-fg-l: #3c3836;
+    --color-gruvbox-fg-2-l: #7c6f64;
+    --color-gruvbox-accent-l: #d79921;
 }
 
 #content a {
-    @apply hover:text-gruvbox-accent transition-colors underline cursor-pointer;
+    @apply dark:hover:text-gruvbox-accent hover:text-gruvbox-accent-l transition-colors underline cursor-pointer;
 }
 
 #content img {
-    @apply border-gruvbox-fg-2 border-2 rounded-lg my-2;
+    @apply dark:border-gruvbox-fg-2 border-gruvbox-fg-2-l border-2 rounded-lg my-2;
 }
 
 #content code {
-    @apply text-sm w-full sm:text-base inline-flex text-left items-center space-x-4 border-2 border-gruvbox-fg-2 bg-gruvbox-bg text-gruvbox-fg rounded-lg p-4 pl-6 my-2;
+    @apply text-sm w-full sm:text-base inline-flex text-left items-center space-x-4 border-2 dark:border-gruvbox-fg-2 border-gruvbox-fg-2-l dark:bg-gruvbox-bg bg-gruvbox-bg-l dark:text-gruvbox-fg text-gruvbox-fg-l rounded-lg p-4 pl-6 my-2;
 }
