@@ -3,7 +3,8 @@
 
 @theme {
     --font-sans: "Nunito", "sans-serif";
-    
+    --font-code: url("./mononoki-Regular.ttf") format("truetype");
+
     --color-gruvbox-bg: #282828;
     --color-gruvbox-fg: #ebdbb2;
     --color-gruvbox-fg-2: #7c6f64;
@@ -23,6 +24,9 @@
     @apply dark:border-gruvbox-fg-2 border-gruvbox-fg-2-l border-2 rounded-lg my-2;
 }
 
+#content pre {
+    all: unset;}
+
 #content code {
-    @apply text-sm w-full sm:text-base inline-flex text-left items-center space-x-4 border-2 dark:border-gruvbox-fg-2 border-gruvbox-fg-2-l dark:bg-gruvbox-bg bg-gruvbox-bg-l dark:text-gruvbox-fg text-gruvbox-fg-l rounded-lg p-4 pl-6 my-2;
+    @apply font-code w-full sm:text-base inline-flex text-left items-center space-x-4 border-2 dark:border-gruvbox-fg-2 border-gruvbox-fg-2-l dark:bg-gruvbox-bg bg-gruvbox-bg-l dark:text-gruvbox-fg text-gruvbox-fg-l rounded-lg p-4 pl-6 my-2;
 }
