@@ -7,7 +7,7 @@ I stopped using Windows in my first year in college. It felt too limiting and hu
 
 Since then I have used a lot of different distro's: Arch, Void, NixOS, Mint, Fedora and finally Debian.
 
-I also switched DE or WM a lot. Hyprland, dwm, i3wm, Cinnamon, Gnome and last but certainly not least: bspwm.
+I also switched DE or WM a lot. Hyprland, dwm, i3wm, Cinnamon, Gnome and bspwm.
 
 I currently have a minimal setup based on Debian with the [BSPWM](https://github.com/baskerville/bspwm) window manager and [SXHKD](https://github.com/baskerville/sxhkd) hotkey daemon.
 
