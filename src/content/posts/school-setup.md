@@ -1,5 +1,6 @@
 ---
 title: Setup for college
+image: setup-for-college.webp
 date: 2025-04-02
 ---
 

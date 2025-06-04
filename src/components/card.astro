@@ -1,9 +1,14 @@
 ---
-import Link from "./link.astro";
-const { title, date, href } = Astro.props;
+import Button from "./button.astro";
+
+const { image, title, date, href } = Astro.props;
 ---
 
-<article class="flex flex-row justify-between">
-    <Link href={href}><h3>{title}</h3></Link>
-    <p>{date}</p>
+<article class="flex flex-col gap-2">
+    <section class="h-22 bg-cover rounded-md border-2" style={`background-image: url('/images/${image}');`}></section>
+    <section class="flex flex-row justify-between">
+        <h2 class="text-xl">{title}</h2>
+        <span class="">{date}</span>
+    </section>
+    <Button href={href}>Read</Button>
 </article>

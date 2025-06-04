@@ -1,5 +1,6 @@
 ---
 title: Chiro Stam
+image: chiro-stam.webp
 date: 2025-03-27
 ---
 

@@ -1,0 +1,39 @@
+---
+import Column from "@components/column.astro";
+import Link from "@components/link.astro";
+import Title from "@components/title.astro";
+import Base from "@layouts/base.astro";
+import { sortOnDate } from "@lib/date";
+import { convertSlug } from "@lib/slug";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts").then((posts) => sortOnDate(posts));
+const post = posts[0];
+---
+
+<Base>
+    <Column>
+        <Title>about me</Title>
+        <Column gap={2}>
+            <p>
+                My name is niceduckdev! I am a student at KdG in Antwerp and I love making games, websites and spending
+                time creating other technological stuff.
+            </p>
+            <p>
+                You can contact me at
+                <Link href="mailto:contact@niceduck.dev" target="_blank">contact@niceduck.dev</Link>.
+            </p>
+        </Column>
+    </Column>
+
+    <Column>
+        <Title>latest news</Title>
+        <Column gap={2}>
+            <p>
+                Read my last post "{post.data.title}" via <Link href={`/posts/${convertSlug(post.data.title)}`}
+                    >this link</Link
+                >.
+            </p>
+        </Column>
+    </Column>
+</Base>

@@ -1,5 +1,6 @@
 ---
 title: Global Gourmet
+image: global-gourmet.webp
 date: 2024-12-20
 ---
 
@@ -11,6 +12,6 @@ I used an open source database based on SQLite called [Pocketbase](https://pocke
 
 The site is deployed on [Cloudflare pages](https://pages.cloudflare.com/).
 
-If I had to develop this website right now I would go for a more server side approach. This uses VueJS's SPA router which is great for applications with a lot of client side interactivity. This site doesn't need that amount of complexity.
+If I had to develop this website right now I would go for a more server side approach. The site uses VueJS's SPA router which is great for applications with a lot of client side interactivity but this isn't the case.
 
 ![Global Gourmet](/images/projects/global-gourmet.webp)

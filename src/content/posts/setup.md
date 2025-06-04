@@ -1,5 +1,6 @@
 ---
 title: My setup
+image: my-setup/code.webp
 date: 2025-04-23
 ---
 

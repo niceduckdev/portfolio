@@ -4,3 +4,17 @@ export function formatDate(date: Date) {
     const year = date.getFullYear().toString().substring(2);
     return `${day}/${month}/${year}`;
 }
+
+type CollectionEntry = {
+    data: {
+        date: string | Date;
+        [key: string]: any;
+    };
+    [key: string]: any;
+};
+
+export function sortOnDate(collection: CollectionEntry[]) {
+    return collection.sort((a, b) => {
+        return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+    });
+}

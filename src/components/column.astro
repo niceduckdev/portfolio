@@ -1,0 +1,8 @@
+---
+import { getGap } from "@lib/gap";
+const { gap } = Astro.props;
+---
+
+<section class={`flex flex-col ${getGap(gap)}`}>
+	<slot />
+</section>

@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import Page from "@layouts/page.astro";
+import Base from "@layouts/base.astro";
 import Link from "@components/link.astro";
 import Title from "@components/title.astro";
 import { formatDate } from "@lib/date";
@@ -17,10 +17,8 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Page>
+<Base>
     <div id="content" class="flex flex-col gap-2">
-        <span><Link href="/">← Back</Link></span>
-
         <section>
             <Title>{post.data.title}</Title>
             <section class="flex gap-3">
@@ -28,6 +26,7 @@ const { Content } = await render(post);
                 <p>{getTime(post.body)} min read</p>
             </section>
         </section>
+        
         <Content />
     </div>
-</Page>
+</Base>

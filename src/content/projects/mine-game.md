@@ -1,5 +1,6 @@
 ---
 title: Mine Game
+image: mine-game.webp
 date: 2024-06-01
 ---
 
