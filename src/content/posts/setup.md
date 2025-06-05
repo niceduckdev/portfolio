@@ -1,23 +1,29 @@
 ---
-title: My setup
-image: my-setup/code.webp
-date: 2025-04-23
+title: Setup for college
+image: setup-for-college.webp
+date: 2025-06-06
 ---
 
-I stopped using Windows in my first year in college. It felt too limiting and hurt my developer experience.
+Since I switched to Linux I have been looking for ways to be more productive as a student. I found a post written by Gilles Castel that explained his awesome way of making notes using Latex and Python scripts.
 
-Since then I have used a lot of different distro's: Arch, Void, NixOS, Mint, Fedora and finally Debian.
+> Read the original post on [Gilles' website](https://castel.dev/post/lecture-notes-3).
 
-I also switched DE or WM a lot. Hyprland, dwm, i3wm, Cinnamon, Gnome and bspwm.
+I was interested in learning Rust so I started looking for small projects to develop.
 
-I currently have a minimal setup based on Debian with the [BSPWM](https://github.com/baskerville/bspwm) window manager and [SXHKD](https://github.com/baskerville/sxhkd) hotkey daemon.
+The tool reads through a base directory that is filled with semesters or periods.
+When executing the `school-setup semesters` command you can expect something that looks like this.
+- `semester-1`
+- `semester-2`
+- `period-1`
+- `period-2`
+- `period-3`
 
-I created my own status bar using [EWW](https://github.com/elkowar/eww) and use [Rofi](https://github.com/davatorium/rofi) to launch software. I also use the [Alacritty](https://github.com/alacritty/alacritty) terminal.
+You can select a period or semester by executing the `school-setup semesters <semester>` command.
 
-I use the [Gruvbox color scheme](https://github.com/morhetz/gruvbox) and the [mononoki font](https://madmalik.github.io/mononoki).
+This behaviour is copied for courses, a list is shown when executing `school-setup courses` and a course can be selected with the `school-setup courses <course>` command.
 
-![Setup while writing this post](/images/posts/my-setup/post.webp)
+> You can check out the code on [github](https://github.com/niceduckdev/school-setup).
 
-![Setup while editing code](/images/posts/my-setup/code.webp)
+All of my keybindings are managed by the *sxhkd* keyboard daemon. I use *rofi* to show the output of my tool.
 
-You can check out my dotfiles on [github](https://github.com/niceduckdev/dotfiles).
+I also created keybindings for opening a terminal or file manager in the current course directory.

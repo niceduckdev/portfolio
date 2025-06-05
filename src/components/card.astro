@@ -4,7 +4,7 @@ import Button from "./button.astro";
 const { image, title, date, href } = Astro.props;
 ---
 
-<article class="flex flex-col gap-2">
+<article class="flex flex-col gap-1">
     <section class="h-22 bg-cover rounded-md border-2" style={`background-image: url('/images/${image}');`}></section>
     <section class="flex flex-row justify-between">
         <h2 class="text-xl">{title}</h2>
