@@ -33,5 +33,5 @@
 }
 
 #content code {
-	@apply bg-gruvbox-fg-2 text-md py-0.5 px-1 rounded-md text-gruvbox-bg;
+	@apply bg-gruvbox-fg-2 text-sm py-0.5 px-1 rounded-md text-gruvbox-bg;
 }
