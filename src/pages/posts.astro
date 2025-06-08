@@ -18,7 +18,7 @@ const posts = await getCollection("posts").then((posts) => sortOnDate(posts));
                 posts.map((post: any) => (
                     <Card
                         image={post.data.image ? `posts/${post.data.image}` : "null.webp"}
-                        title={post.data.title}
+                        title={post.data.title.toLowerCase()}
                         date={formatDate(post.data.date)}
                         href={`/posts/${convertSlug(post.data.title)}`}
                     />

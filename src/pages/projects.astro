@@ -17,7 +17,7 @@ const projects = await getCollection("projects").then((projects) => sortOnDate(p
             {
                 projects.map((project: any) => (
                     <Card
-                        title={project.data.title}
+                        title={project.data.title.toLowerCase()}
                         image={project.data.image ? `projects/${project.data.image}` : "null.webp"}
                         date={formatDate(project.data.date)}
                         href={`/projects/${convertSlug(project.data.title)}`}

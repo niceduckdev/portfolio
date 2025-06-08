@@ -20,7 +20,7 @@ const { Content } = await render(post);
 <Base>
     <div id="content" class="flex flex-col gap-2">
         <section>
-            <Title>{post.data.title}</Title>
+            <Title>{post.data.title.toLowerCase()}</Title>
             <section class="flex gap-3">
                 <p>{formatDate(post.data.date)}</p>
                 <p>{getTime(post.body)} min read</p>
