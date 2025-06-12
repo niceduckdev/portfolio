@@ -27,3 +27,21 @@ This behaviour is copied for courses, a list is shown when executing `school-set
 All of my keybindings are managed by the *sxhkd* keyboard daemon. I use *rofi* to show the output of my tool.
 
 I also created keybindings for opening a terminal or file manager in the current course directory.
+
+```sh
+# show semesters
+super + s
+    rofi -modi 'semesters:school-setup semesters' -show semesters -p '' -theme-str 'prompt \{ enabled: false; \}'
+
+# show courses in current semester
+super + c
+	rofi -modi 'courses:school-setup courses' -show courses -p '' -theme-str 'prompt \{ enabled: false; \}'
+
+# show current course in file manager
+super + o
+	pcmanfm /home/kaj/school/course
+
+# show current course in terminal
+super + p
+	alacritty --working-directory /home/kaj/school/course
+```
