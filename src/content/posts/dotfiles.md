@@ -14,7 +14,7 @@ This led to me trying out a bunch of window managers and desktop environments. M
 
 My current setup *(that I have been using for at least a couple of months now)* is based on *Debian* and uses the *bspwm* window manager.
 
-> You can check out my dotfiles on [github](https://github.com/niceduckdev/dotfiles).
+> You can check out my dotfiles on [Github](https://github.com/niceduckdev/dotfiles).
 
 Here is a list of some of the tools that I use every day.
 - zsh *(Shell)*
