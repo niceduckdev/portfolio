@@ -21,7 +21,7 @@ Here is a list of some of the tools that I use every day.
 - nvim *(Editor)*
 - alacritty *(Terminal)*
 - rofi *(Application launcher)*
-- libewolf *(Browser)*
+- librewolf *(Browser)*
 - pcmanfm *(GUI file manager)*
 
 And here are some screenshots of my setup.
