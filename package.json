@@ -2,6 +2,9 @@
     "name": "portfolio",
     "type": "module",
     "version": "1.O",
+    "engines": {
+        "node": ">=18.20.0"
+    },
     "scripts": {
         "dev": "astro dev",
         "build": "astro build",
