@@ -1,6 +1,5 @@
 ---
-title: Dotfiles
-image: dotfiles/code.webp
+title: My dotfiles and journey in the Linux ecosystem
 date: 2025-06-05
 ---
 

@@ -1,15 +1,8 @@
----
-import Link from "@components/link.astro";
-import "../styles.css";
----
-
 <nav class="flex flex-col">
-    <h1 class="text-3xl dark:text-gruvbox-accent text-gruvbox-accent-l font-bold">niceduckdev</h1>
+    <h1
+        class="text-3xl dark:text-gruvbox-accent text-gruvbox-accent-l font-bold"
+    >
+        <a href="/">niceduckdev</a>
+    </h1>
     <h2>Student + Software Developer</h2>
-
-    <section class="flex flex-row gap-3">
-        <Link href="/">/about-me</Link>
-        <Link href="/posts">/posts</Link>
-        <Link href="/projects">/projects</Link>
-    </section>
 </nav>

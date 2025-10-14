@@ -1,0 +1,31 @@
+#content a {
+    @apply dark:hover:text-gruvbox-accent hover:text-gruvbox-accent-l transition-colors underline cursor-pointer;
+}
+
+#content img {
+    @apply rounded-md border-4;
+}
+
+#content ul {
+    @apply list-disc ml-8;
+}
+
+#content blockquote {
+    @apply ml-2 my-2 border-l-4 border-gruvbox-accent px-4 py-1;
+}
+
+#content code:not(pre > code) {
+    @apply font-code bg-gruvbox-fg-2 text-sm py-0.5 px-1 rounded-md text-gruvbox-bg;
+}
+
+#content pre {
+    @apply p-2 rounded-md;
+}
+
+#content pre code {
+    @apply font-code text-sm py-0.5 px-1 rounded-md text-gruvbox-fg-2;
+}
+
+#content hr {
+    @apply my-2 border-0
+}

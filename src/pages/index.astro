@@ -1,15 +1,20 @@
 ---
+import Card from "@components/card.astro";
 import Column from "@components/column.astro";
 import Image from "@components/image.astro";
 import Link from "@components/link.astro";
+import Quote from "@components/quote.astro";
 import Title from "@components/title.astro";
 import Base from "@layouts/base.astro";
-import { sortOnDate } from "@lib/date";
+import { Align } from "@lib/align";
+import { formatDate } from "@lib/date";
+import { formatMaxLength } from "@lib/length";
 import { convertSlug } from "@lib/slug";
-import { getCollection } from "astro:content";
+import { getAllPosts } from "@services/post-service";
+import { getAllProjects } from "@services/project-service";
 
-const posts = await getCollection("posts").then((posts) => sortOnDate(posts));
-const post = posts[0];
+const posts = await getAllPosts(false);
+const projects = await getAllProjects();
 ---
 
 <Base>
@@ -17,26 +22,59 @@ const post = posts[0];
         <Title>about me</Title>
         <Column gap={2}>
             <p>
-                My name is niceduckdev! I am a student at KdG in Antwerp and I love making games, websites and spending
-                time creating other technological stuff.
+                My name is Kaj and I'm a student at KdG in Antwerp. I love
+                creating websites, software and other technological stuff.
             </p>
             <p>
                 You can contact me at
-                <Link href="mailto:contact@niceduck.dev" target="_blank">contact@niceduck.dev</Link> and check out my repositories on <Link href="https://github.com/niceduckdev" target="_blank">github</Link>.
+                <Link href="mailto:contact@niceduck.dev" target="_blank"
+                    >contact@niceduck.dev</Link
+                > and check out my projects on <Link
+                    href="https://github.com/niceduckdev"
+                    target="_blank">Github</Link
+                >.
             </p>
+
+            <Quote
+                >Want to learn more <Link href="/posts/about-me">about me</Link
+                >?</Quote
+            >
         </Column>
     </Column>
 
-	<Image src="quack.webp" />
+    <Image src="quack.webp" />
 
     <Column>
-        <Title>latest news</Title>
-        <Column gap={2}>
-            <p>
-                Read my last post "{post.data.title}" via <Link href={`/posts/${convertSlug(post.data.title)}`}
-                    >this link</Link
-                >.
-            </p>
+        <Title>posts</Title>
+        <Column align={Align.START}>
+            {
+                posts.map((post: any) => (
+                    <Link href={`/posts/${convertSlug(post.data.title)}`}>
+                        {formatMaxLength(post.data.title)}
+                    </Link>
+                ))
+            }
+        </Column>
+    </Column>
+
+    <Column>
+        <Title>projects</Title>
+        <Column gap={4}>
+            {
+                projects.map((project: any) => (
+                    <Card
+                        title={project.data.title}
+                        description={project.data.description}
+                        image={
+                            project.data.image
+                                ? `projects/${project.data.image}`
+                                : "null.webp"
+                        }
+                        date={formatDate(project.data.date)}
+                        href={`/projects/${convertSlug(project.data.title)}`}
+                    />
+                ))
+            }
         </Column>
     </Column>
 </Base>

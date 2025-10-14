@@ -1,14 +1,20 @@
 ---
-import Button from "./button.astro";
+import Column from "@components/column.astro";
+import { convertSlug } from "@lib/slug";
 
-const { image, title, date, href } = Astro.props;
+const { image, title, description, date, href } = Astro.props;
 ---
 
-<article class="flex flex-col gap-1">
-    <section class="h-22 bg-cover rounded-md border-2" style={`background-image: url('/images/${image}');`}></section>
-    <section class="flex flex-row justify-between">
-        <h2 class="text-xl">{title}</h2>
-        <span class="">{date}</span>
+<a href={`/projects/${convertSlug(title)}`} class="group">
+    <section class="flex flex-col sm:flex-row gap-4">
+        <section
+            class="min-w-56 h-32 bg-cover rounded-md border-2 dark:group-hover:border-gruvbox-accent light:group-hover:border-gruvbox-accent-l transition-colors"
+            style={`background-image: url('/images/${image}');`}
+        >
+        </section>
+        <Column gap={1}>
+            <h2 class="text-2xl">{title}</h2>
+            <p>{description}</p>
+        </Column>
     </section>
-    <Button href={href}>Read</Button>
-</article>
+</a>

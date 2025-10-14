@@ -1,32 +1,42 @@
 ---
-import { getCollection, render } from "astro:content";
-import Base from "@layouts/base.astro";
+import Column from "@components/column.astro";
 import Link from "@components/link.astro";
+import Row from "@components/row.astro";
+import Stack from "@components/stack.astro";
 import Title from "@components/title.astro";
+import Base from "@layouts/base.astro";
 import { formatDate } from "@lib/date";
+import { convertSlug } from "@lib/slug";
 import { getTime } from "@lib/time";
+import { getAllProjects } from "@services/project-service";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
-    const posts = await getCollection("projects");
-    return posts.map((post) => ({
-        params: { slug: post.data.title.toLowerCase().replaceAll(" ", "-").replaceAll('"', "").replaceAll("'", "") },
-        props: { post },
+    const projects = await getAllProjects();
+    return projects.map((project: any) => ({
+        params: {
+            slug: convertSlug(project.data.title),
+        },
+        props: { project },
     }));
 }
-const { post } = Astro.props;
-const { Content } = await render(post);
+
+const { project } = Astro.props;
+const { Content } = await render(project);
 ---
 
 <Base>
-    <div id="content" class="flex flex-col gap-2">
-        <section>
-            <Title>{post.data.title.toLowerCase()}</Title>
-            <section class="flex gap-3">
-                <p>{formatDate(post.data.date)}</p>
-                <p>{getTime(post.body)} min read</p>
-            </section>
+    <Link href="/">← Back</Link>
+    <Column>
+        <Stack>
+            <Title>{project.data.title.toLowerCase()}</Title>
+            <Row>
+                <p>{formatDate(project.data.date)}</p>
+                <p>{getTime(project.body)} min read</p>
+            </Row>
+        </Stack>
+        <section id="content" class="flex flex-col gap-2">
+            <Content />
         </section>
-        
-        <Content />
-    </div>
+    </Column>
 </Base>

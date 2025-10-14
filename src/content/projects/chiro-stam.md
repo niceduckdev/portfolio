@@ -1,5 +1,6 @@
 ---
 title: Chiro Stam
+description: Website for my Chiro. Made using Astro and Tailwind, hosted on Cloudflare Pages
 image: chiro-stam.webp
 date: 2025-03-27
 ---
@@ -10,6 +11,6 @@ After learning a lot about client side javascript frameworks I remade it using [
 
 Using a client side javascript framework for this type of website was pretty stupid and overkill. That's why I remade the site using [Astro](https://astro.build/) and [Tailwind](https://tailwindcss.com/).
 
-[Nunito](https://fonts.google.com/specimen/Nunito) is used as the typeface. The site is deployed on [Cloudflare pages](https://pages.cloudflare.com/).
+[Nunito](https://fonts.google.com/specimen/Nunito) is used as the typeface. The site is deployed on [Cloudflare Pages](https://pages.cloudflare.com/).
 
 ![Chiro Stam](/images/projects/chiro-stam.webp)

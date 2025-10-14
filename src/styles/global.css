@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&display=swap");
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Mononoki";
+    src: url("./mononoki.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+    --font-sans: "Nunito", "sans-serif";
+    --font-code: "Mononoki", "code";
+
+    --color-gruvbox-bg: #282828;
+    --color-gruvbox-fg: #ebdbb2;
+    --color-gruvbox-fg-2: #7c6f64;
+    --color-gruvbox-accent: #d79921;
+
+    --color-gruvbox-bg-l: #fbf1c7;
+    --color-gruvbox-fg-l: #3c3836;
+    --color-gruvbox-fg-2-l: #7c6f64;
+    --color-gruvbox-accent-l: #d79921;
+}
+
+
+@import "./content.css";

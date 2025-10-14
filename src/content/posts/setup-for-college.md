@@ -1,6 +1,5 @@
 ---
-title: Setup for college
-image: setup-for-college.webp
+title: My custom tool that makes college easier
 date: 2025-06-06
 ---
 
@@ -8,7 +7,9 @@ Since I switched to Linux I have been looking for ways to be more productive as 
 
 > Read the original post on [Gilles' website](https://castel.dev/post/lecture-notes-3).
 
-I was interested in learning Rust so I started looking for small projects to develop.
+The previous version of this tool was written in [Rust](https://rustlang.org). I recently rewrote it using [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+
+> You can check out the code on [Github](https://github.com/niceduckdev/school-setup).
 
 The tool reads through a base directory that is filled with semesters or periods.
 When executing the `school-setup semesters` command you can expect something that looks like this.
@@ -21,8 +22,6 @@ When executing the `school-setup semesters` command you can expect something tha
 You can select a period or semester by executing the `school-setup semesters <semester>` command.
 
 This behaviour is copied for courses, a list is shown when executing `school-setup courses` and a course can be selected with the `school-setup courses <course>` command.
-
-> You can check out the code on [github](https://github.com/niceduckdev/school-setup).
 
 All of my keybindings are managed by the *sxhkd* keyboard daemon. I use *rofi* to show the output of my tool.
 

@@ -5,7 +5,7 @@ export function formatDate(date: Date) {
     return `${day}/${month}/${year}`;
 }
 
-type CollectionEntry = {
+export type CollectionEntryLike = {
     data: {
         date: string | Date;
         [key: string]: any;
@@ -13,7 +13,7 @@ type CollectionEntry = {
     [key: string]: any;
 };
 
-export function sortOnDate(collection: CollectionEntry[]) {
+export function sortOnDate(collection: CollectionEntryLike[]) {
     return collection.sort((a, b) => {
         return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
     });

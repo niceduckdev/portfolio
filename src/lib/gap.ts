@@ -7,6 +7,6 @@ export function getGap(gap: number) {
         case 4:
             return "gap-4";
         default:
-            return "gap-1";
+            return "gap-2";
     }
 }
