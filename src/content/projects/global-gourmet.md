@@ -5,14 +5,12 @@ image: global-gourmet.webp
 date: 2024-12-20
 ---
 
-This website was made in my second year at KdG for the "Communication 2" course. It uses the [VueJS](https://vuejs.org/) framework and uses [Tailwind](https://tailwindcss.com/) for the styling.
+This website was developed during my second year at KdG for the Communication 2 course, where I implemented VueJS as the frontend framework with Tailwind CSS for styling and Nunito as the primary typeface.
 
-[Nunito](https://fonts.google.com/specimen/Nunito) is used as the typeface.
+I used the Pocketbase backend, an open-source SQLite-based database that was straightforward to set up.
 
-I used an open source database based on SQLite called [Pocketbase](https://pocketbase.io/). It is incredibly easy to set up and use.
+The entire project is deployed on Cloudflare Pages.
 
-The site is deployed on [Cloudflare Pages](https://pages.cloudflare.com/).
-
-If I had to develop this website right now I would go for a more server side approach. The site uses VueJS's SPA router which is great for applications with a lot of client side interactivity but this wasn't the case with this website.
+While VueJS's single-page application router excelled at client-side interactivity, the project's requirements would have been better served by a server-side approach given the limited need for dynamic functionality.
 
 ![Global Gourmet](/images/projects/global-gourmet.webp)

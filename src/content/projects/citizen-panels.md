@@ -5,11 +5,11 @@ image: citizen-panels/citizens.webp
 date: 2025-05-28
 ---
 
-This application was made in team using [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)), [ASP.NET Core MVC](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-9.0) and [PostgreSQL](https://www.postgresql.org/).
+This application was made in team using C#, ASP.NET and PostgreSQL.
 
 We got the assignment to create an application that made it easier for organisations and citizens to organise and join [citizen panels](https://en.wikipedia.org/wiki/Citizens%27_Reference_Panel).
 
-In total I spent around 250 hours developing this application. I was in charge of the user interface and user experience.
+My primary contribution was to the user experience. I designed and implemented the interface for the entire application over the course of 250 development hours.
 
 ---
 

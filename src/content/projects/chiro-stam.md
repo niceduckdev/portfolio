@@ -5,12 +5,10 @@ image: chiro-stam.webp
 date: 2025-03-27
 ---
 
-The first version of this website was made using [NextJS](https://nextjs.org) with the [ChakraUI](https://chakra-ui.com) framework.
+The first version of this website was made using NextJS with the ChakraUI.
 
-After learning a lot about client side javascript frameworks I remade it using [VueJS](https://vuejs.org/) and [Tailwind](https://tailwindcss.com/), mirroring the style of [ChakraUI](https://chakra-ui.com.).
+After learning a lot about client side javascript frameworks I remade it using VueJS and Tailwind, mirroring the style of ChakraUI. Using a client side javascript framework for this type of website was pretty stupid and overkill. 
 
-Using a client side javascript framework for this type of website was pretty stupid and overkill. That's why I remade the site using [Astro](https://astro.build/) and [Tailwind](https://tailwindcss.com/).
-
-[Nunito](https://fonts.google.com/specimen/Nunito) is used as the typeface. The site is deployed on [Cloudflare Pages](https://pages.cloudflare.com/).
+The current version is built using Astro and Tailwind. It is typeset in Nunito and is deployed on Cloudflare Pages.
 
 ![Chiro Stam](/images/projects/chiro-stam.webp)

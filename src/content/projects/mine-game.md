@@ -5,10 +5,10 @@ image: mine-game.webp
 date: 2024-06-01
 ---
 
-My second big assignment at KdG was to create a game for the Arduino UNO R3 using C without the arduino library. I ended up creating my own "engine" around some basic libraries written during class.
+I developed this submarine mine game as a major assignment for the Arduino UNO R3.
 
-I developed a submarine mine game. This was my first try at writing low level code on an embedded system and I learned a lot from it.
+The implementation was done in C, where I constructed a custom engine without relying on the Arduino library.
 
-> You can check out the source code via [this repository](https://github.com/niceduckdev/mine-game).
+This project served as my introduction to low-level embedded systems programming, from which I learned a lot. You can check out the source code via [this repository](https://github.com/niceduckdev/mine-game).
 
 ![Level generator](/images/projects/mine-game.webp)

@@ -5,11 +5,11 @@ image: four-colors.webp
 date: 2024-01-20
 ---
 
-One of my first big projects in my first year was to create a clone of Uno using [Java](https://www.java.com/en) and [JavaFX](https://openjfx.io) while using the [MVC architecture](https://www.geeksforgeeks.org/system-design/mvc-architecture-system-design).
+I developed a full-featured Uno clone in Java with JavaFX, following the MVP architecture.
 
-I created a system to make it easier to use this architecture without hard coding the dependencies in each Model, View and Controller class.
+My initiative led to a custom system for managing the Models, Views and Presenters more efficiently across the application.
 
-I also added online multiplayer by using the [Kryonet](https://github.com/EsotericSoftware/kryonet) networking library.
+The project was later expanded to include online multiplayer, powered by the Kryonet networking library.
 
 > Check out the source code in [this repository](https://github.com/niceduckdev/four-colors).
 
