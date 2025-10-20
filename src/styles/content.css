@@ -23,7 +23,7 @@
 }
 
 #content pre code {
-    @apply font-code text-sm py-0.5 px-1 rounded-md text-gruvbox-fg-2;
+    @apply font-code text-sm py-0.5 rounded-md text-gruvbox-fg-2;
 }
 
 #content hr {

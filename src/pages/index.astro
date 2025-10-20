@@ -4,6 +4,7 @@ import Column from "@components/column.astro";
 import Image from "@components/image.astro";
 import Link from "@components/link.astro";
 import Quote from "@components/quote.astro";
+import Stack from "@components/stack.astro";
 import Title from "@components/title.astro";
 import Base from "@layouts/base.astro";
 import { Align } from "@lib/align";
@@ -18,35 +19,31 @@ const projects = await getAllProjects();
 ---
 
 <Base>
-    <Column>
-        <Title>about me</Title>
-        <Column gap={2}>
-            <p>
-                My name is Kaj and I'm a student at KdG in Antwerp. I love
-                creating websites, software and other technological stuff.
-            </p>
-            <p>
-                You can contact me at
-                <Link href="mailto:contact@niceduck.dev" target="_blank"
-                    >contact@niceduck.dev</Link
-                > and check out my projects on <Link
-                    href="https://github.com/niceduckdev"
-                    target="_blank">Github</Link
-                >.
-            </p>
-
-            <Quote
-                >Want to learn more <Link href="/posts/about-me">about me</Link
-                >?</Quote
-            >
-        </Column>
+    <Column gap={2}>
+        <p>
+            My name is Kaj and I'm a student at KdG in Antwerp. I love creating
+            websites, software and other technological stuff.
+        </p>
+        <Quote>
+            <Link href="/posts/about-me">Click here</Link> if you want to learn more
+            about me.
+        </Quote>
+        <p>
+            Contact me via
+            <Link href="mailto:contact@niceduck.dev" target="_blank"
+                >contact@niceduck.dev</Link
+            > and check out my projects on <Link
+                href="https://github.com/niceduckdev"
+                target="_blank">Github</Link
+            >.
+        </p>
     </Column>
 
     <Image src="quack.webp" />
 
     <Column>
-        <Title>posts</Title>
-        <Column align={Align.START}>
+        <Title>my posts 📝</Title>
+        <Column align={Align.START} gap={3}>
             {
                 posts.map((post: any) => (
                     <Link href={`/posts/${convertSlug(post.data.title)}`}>
@@ -58,21 +55,18 @@ const projects = await getAllProjects();
     </Column>
 
     <Column>
-        <Title>projects</Title>
-        <Column gap={4}>
+        <Title>my projects 🔨</Title>
+        <Column align={Align.START} gap={3}>
             {
                 projects.map((project: any) => (
-                    <Card
-                        title={project.data.title}
-                        description={project.data.description}
-                        image={
-                            project.data.image
-                                ? `projects/${project.data.image}`
-                                : "null.webp"
-                        }
-                        date={formatDate(project.data.date)}
-                        href={`/projects/${convertSlug(project.data.title)}`}
-                    />
+                    <Stack>
+                        <Link
+                            href={`/projects/${convertSlug(project.data.title)}`}
+                        >
+                            {formatMaxLength(project.data.title)}
+                        </Link>
+                        <p class="text-base">{project.data.description}</p>
+                    </Stack>
                 ))
             }
         </Column>

@@ -8,7 +8,9 @@ My name is Kaj and I'm a student at KdG in Antwerp (Belgium). I love creating we
 
 ---
 
-I started tinkering with computers and games at a young age. I was really into [Stop motion](https://en.wikipedia.org/wiki/Stop_motion) and used my Lego and action figures to create my own "movies".
+I started tinkering with computers at a young age. I started out on a desktop with a Pentium 4 and 2 gigabytes of DDR2 memory.
+
+I was really into [Stop motion](https://en.wikipedia.org/wiki/Stop_motion) and used Lego to create my own "movies".
 
 ![Lego Minecraft](/images/lego-stop-motion.webp)
 
@@ -32,9 +34,7 @@ I started hearing good things about Javascript frameworks so I decided to create
 
 I didn't really understand the use case of [SPAs](https://developer.mozilla.org/en-US/docs/Glossary/SPA) so I created all my websites using the most overkill tool for the job.
 
-After watching a youtube video about [VueJS](https://vuejs.org) I was really interested. I rewrote all of my websites using [VueJS](https://vuejs.org/) and [Tailwind](https://tailwindcss.com/).
-
-> You can read more about the website for my Chiro on [this page](/projects/chiro-stam).
+After watching a youtube video about [VueJS](https://vuejs.org) I was really interested. I rewrote all of my websites using [VueJS](https://vuejs.org/) and [Tailwind](https://tailwindcss.com/). You can read more about the website for my Chiro on [this page](/projects/chiro-stam).
 
 ---
 
@@ -44,20 +44,13 @@ In September of 2023 I started studying at KdG in Antwerp.
 
 We started learning about the [Java](https://www.java.com/en) and basic [Object oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming).
 
-The first few weeks were quite boring due to the slow start. The requirement to take exams with pen and paper didn't make it any easier.
-
-> You can read more about my first projects at KdG on [this page](/projects/four-colors) and [this page](/projects/mine-game).
+The first few weeks were quite boring due to the slow start. The requirement to take exams with pen and paper didn't make it any easier. You can read more about my first projects at KdG on [this page](/projects/four-colors) and [this page](/projects/mine-game).
 
 ---
 
-In the first semester of my second year at KdG I created a blog using [VueJS](https://vuejs.org) and [Pocketbase](https://pocketbase.io).
+In the first semester of my second year at KdG I created a blog using [VueJS](https://vuejs.org) and [Pocketbase](https://pocketbase.io). You can read more about "Global Gourmet" on [this page](/projects/global-gourmet).
 
-> You can read more on [this page](/projects/global-gourmet).
-
-
-In the second semester I got the largest assignment that I had ever worked on.
-
-> You can read more on [this page](/projects/citizen-panels).
+In the second semester I got the largest assignment that I had ever worked on. You can read more about "Citizen Panels" on [this page](/projects/citizen-panels).
 
 ---
 
@@ -67,6 +60,5 @@ One of these explores the concept of microservices using [Java](https://www.java
 
 The other project is an application to manage a smart home that uses [React](https://react.dev/) (and [Pocketbase](https://pocketbase.io)).
 
-> Right now I am searching for a company where I can do an internship in the last period of this year.
->
+> I am looking for a company where I can do an internship in the last semester of this year.
 > I am really interested in going to a Scandinavian country. Please send me a mail at [contact@niceduck.dev](mailto:contact@niceduck.dev) if you have any connections, interest or ideas.
