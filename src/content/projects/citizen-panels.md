@@ -12,10 +12,8 @@ We got the assignment to create an application that made it easier for organisat
 My primary contribution was to the user experience. I designed and implemented the interface for the entire application over the course of 250 development hours.
 
 # Screenshots
-Here is a screenshot of the page that citizens got when visiting a panel.
-
 ![Citizens](/images/projects/citizen-panels/citizens.webp)
-
-And here is a screenshot of the page that organisations got when managing a panel.
+*Citizens visiting a panel*
 
 ![Organisations](/images/projects/citizen-panels/organisations.webp)
+*Organisations managing a panel*

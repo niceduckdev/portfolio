@@ -22,12 +22,12 @@ My current setup (that I have been using for around a year now) is based on Debi
 > You can check out my dotfiles on [Github](https://github.com/niceduckdev/dotfiles).
 
 Here is a list of some of the tools that I use every day.
-- zsh (Shell)
-- nvim (Editor)
-- alacritty (Terminal)
-- rofi (Application launcher)
-- librewolf (Browser)
-- pcmanfm (GUI file manager)
+- Shell: zsh
+- Editor: neovim & vscodium
+- Terminal: alacritty
+- Launcher: rofi
+- Browser: librewolf
+- File Manager: pcmanfm
 
 And here are some screenshots of my setup.
 
