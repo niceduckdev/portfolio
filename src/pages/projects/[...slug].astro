@@ -29,7 +29,7 @@ const { Content } = await render(project);
     <Link href="/">← Back</Link>
     <Column>
         <Stack>
-            <Title>{project.data.title.toLowerCase()}</Title>
+            <Title>{project.data.title}</Title>
             <Row>
                 <p>{formatDate(project.data.date)}</p>
                 <p>{getTime(project.body)} min read</p>

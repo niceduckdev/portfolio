@@ -9,9 +9,9 @@ I found a post written by Gilles Castel that explained his awesome way of making
 
 > Read the original post on [Gilles' website](https://castel.dev/post/lecture-notes-3).
 
----
-
 My tool is written in Bash. You can check out the code on [Github](https://github.com/niceduckdev/setup-for-college).
+
+# How does it work?
 
 The structure of my `school` directory is as following.
 
@@ -24,7 +24,7 @@ semester-2
 
 `course` and `semester` are both symlinks to the current course or semester that I selected using `./school.sh courses` and `./school.sh semesters`.
 
----
+# Keybindings
 
 All of my keybindings are managed by the sxhkd keyboard daemon. I use rofi to show the output of my tool.
 

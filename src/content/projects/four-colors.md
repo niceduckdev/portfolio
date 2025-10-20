@@ -13,4 +13,5 @@ The project was later expanded to include online multiplayer, powered by the Kry
 
 > Check out the source code in [this repository](https://github.com/niceduckdev/four-colors).
 
+# Screenshots
 ![Game logic](/images/projects/four-colors.webp)

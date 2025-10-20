@@ -11,4 +11,5 @@ The implementation was done in C, where I constructed a custom engine without re
 
 This project served as my introduction to low-level embedded systems programming, from which I learned a lot. You can check out the source code via [this repository](https://github.com/niceduckdev/mine-game).
 
+# Screenshots
 ![Level generator](/images/projects/mine-game.webp)

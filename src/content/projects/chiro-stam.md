@@ -11,4 +11,5 @@ After learning a lot about client side javascript frameworks I remade it using V
 
 The current version is built using Astro and Tailwind. It is typeset in Nunito and is deployed on Cloudflare Pages.
 
+# Screenshots
 ![Chiro Stam](/images/projects/chiro-stam.webp)

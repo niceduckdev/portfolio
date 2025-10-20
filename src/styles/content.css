@@ -2,6 +2,10 @@
     @apply dark:hover:text-gruvbox-accent hover:text-gruvbox-accent-l transition-colors underline cursor-pointer;
 }
 
+#content h1 {
+    @apply text-lg my-2 text-gruvbox-fg
+}
+
 #content img {
     @apply rounded-md border-4;
 }

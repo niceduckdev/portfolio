@@ -30,7 +30,7 @@ const { Content } = await render(post);
 
     <Column>
         <Stack>
-            <Title>{post.data.title.toLowerCase()}</Title>
+            <Title>{post.data.title}</Title>
             <Row>
                 <p>{formatDate(post.data.date)}</p>
                 <p>{getTime(post.body)} min read</p>

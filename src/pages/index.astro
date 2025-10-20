@@ -1,14 +1,13 @@
 ---
-import Card from "@components/card.astro";
 import Column from "@components/column.astro";
 import Image from "@components/image.astro";
 import Link from "@components/link.astro";
+import Nav from "@components/nav.astro";
 import Quote from "@components/quote.astro";
 import Stack from "@components/stack.astro";
 import Title from "@components/title.astro";
 import Base from "@layouts/base.astro";
 import { Align } from "@lib/align";
-import { formatDate } from "@lib/date";
 import { formatMaxLength } from "@lib/length";
 import { convertSlug } from "@lib/slug";
 import { getAllPosts } from "@services/post-service";
@@ -19,6 +18,8 @@ const projects = await getAllProjects();
 ---
 
 <Base>
+    <Nav />
+
     <Column gap={2}>
         <p>
             My name is Kaj and I'm a student at KdG in Antwerp. I love creating
@@ -39,10 +40,10 @@ const projects = await getAllProjects();
         </p>
     </Column>
 
-    <Image src="quack.webp" />
+    <Image src="quack.webp" alt="Quack!" />
 
     <Column>
-        <Title>my posts 📝</Title>
+        <Title>Posts 📝</Title>
         <Column align={Align.START} gap={3}>
             {
                 posts.map((post: any) => (
@@ -55,7 +56,7 @@ const projects = await getAllProjects();
     </Column>
 
     <Column>
-        <Title>my projects 🔨</Title>
+        <Title>Projects 🔨</Title>
         <Column align={Align.START} gap={3}>
             {
                 projects.map((project: any) => (

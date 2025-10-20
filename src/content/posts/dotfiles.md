@@ -5,7 +5,7 @@ date: 2025-06-05
 
 I stopped using Windows in my first year in college. It felt like it limited my ability to be productive on my own computer.
 
----
+# The beginning
 
 I started using Arch Linux with a Hyprland rice but I completely broke it by updating my system. This is where my journey of distro-hopping began. Void, NixOS, Mint, Fedora, Debian and Ubuntu.
 
@@ -13,9 +13,9 @@ I could not get the feeling of a tiling window manager out of my head. I started
 
 I simply could not risk breaking my system as a student.
 
----
-
 This led to me trying out a bunch of window managers and desktop environments. My favorites are Gnome (still run it on my desktop using Fedora), i3 and bspwm.
+
+# Current setup
 
 My current setup (that I have been using for around a year now) is based on Debian and uses the bspwm window manager.
 
