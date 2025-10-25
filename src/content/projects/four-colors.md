@@ -9,9 +9,7 @@ I developed a full-featured Uno clone in Java with JavaFX, following the MVP arc
 
 My initiative led to a custom system for managing the Models, Views and Presenters more efficiently across the application.
 
-The project was later expanded to include online multiplayer, powered by the Kryonet networking library.
-
-> Check out the source code in [this repository](https://github.com/niceduckdev/four-colors).
+The project was later expanded to include online multiplayer, powered by the Kryonet networking library. You can check out the source code via [this repository](https://github.com/niceduckdev/four-colors).
 
 # Screenshots
 ![Game logic](/images/projects/four-colors.webp)

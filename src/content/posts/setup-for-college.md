@@ -30,12 +30,16 @@ All of my keybindings are managed by the sxhkd keyboard daemon. I use rofi to sh
 
 ```sh
 super + s
-    rofi -modi 'semesters:school-setup semesters' -show semesters -p '' -theme-str 'prompt \{ enabled: false; \}'
+    rofi -modi 'semesters:school-setup semesters' \
+    -show semesters -p '' \
+    -theme-str 'prompt \{ enabled: false; \}'
 ```
 
 ```sh
 super + c
-	rofi -modi 'courses:school-setup courses' -show courses -p '' -theme-str 'prompt \{ enabled: false; \}'
+	rofi -modi 'courses:school-setup courses' \
+    -show courses -p '' \
+    -theme-str 'prompt \{ enabled: false; \}'
 ```
 
 I also created keybindings for opening a terminal or file manager in the current course directory.
