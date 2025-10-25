@@ -46,8 +46,6 @@ At the time, I had limited experience developing large-scale web applications in
 
 Below is a snippet of the `fetch()` function, which retrieves a specific registration based on its ID.
 
-In hindsight, a better architectural approach would have been to adopt a layered architecture and implement a service like `registration-service.ts`.
-
 ```ts
 async function fetch() {
     if (!validId(id)) {
@@ -61,20 +59,8 @@ async function fetch() {
         await pocketbase
             .collection("registrations")
             .getOne(id)
-            .then((response) => (registration.value = getRegistration(response)));
-
-        await pocketbase
-            .collection("food")
-            .getFullList()
-            .then(
-                (response) =>
-                    (food.value = response.map((model: RecordModel) => {
-                        const food = getFood(model);
-                        return {
-                            food: food,
-                            quantity: (registration.value.food as any)[food.id] || 0,
-                        } as FoodCollection;
-                    }))
+            .then((response) => (
+                registration.value = getRegistration(response))
             );
 
         loading.value = false;
@@ -83,4 +69,29 @@ async function fetch() {
         return;
     }
 }
+```
+
+In hindsight, a better architectural approach would have been to adopt a layered architecture and implement a service like `registration-service.ts`.
+
+```ts
+export async function getAll(): Promise<Registration[]> {
+    if (!database.authStore.isValid) {
+        throw new Error("User is not authenticated");
+    }
+
+    try {
+        const records: RecordModel[] = await database
+            .collection("registrations").getFullList();
+
+        const registrations: Registration[] = records.map(
+            (record: RecordModel) => from(record)
+        );
+
+        return Array.isArray(registrations) ? registrations : [];
+    }
+    catch (error) {
+        throw new Error("Registrations could not be fetched");
+    }
+}
+
 ```
