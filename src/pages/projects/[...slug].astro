@@ -5,6 +5,7 @@ import Row from "@components/row.astro";
 import Stack from "@components/stack.astro";
 import Title from "@components/title.astro";
 import Base from "@layouts/base.astro";
+import { Align } from "@lib/align";
 import { formatDate } from "@lib/date";
 import { convertSlug } from "@lib/slug";
 import { getTime } from "@lib/time";
@@ -26,7 +27,10 @@ const { Content } = await render(project);
 ---
 
 <Base>
-    <Link href="/">← Back</Link>
+	<Column align={Align.START}>
+		<Link href="/">← Back</Link>
+	</Column>
+
     <Column>
         <Stack>
             <Title>{project.data.title}</Title>
