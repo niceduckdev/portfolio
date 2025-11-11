@@ -16,10 +16,11 @@ My tool is written in Bash. You can check out the code on [Github](https://githu
 The structure of my `school` directory is as following.
 
 ```sh
-course -> /home/kaj/school/semester/software-architecture
-semester -> /home/kaj/school/semester-1
-semester-1
-semester-2
+school (main) -> tree
+.
+├── course -> /home/kaj/school/semester/course-1
+├── semester -> /home/kaj/school/semester-1
+└── semester-1
 ```
 
 `course` and `semester` are both symlinks to the current course or semester that I selected using `./school.sh courses` and `./school.sh semesters`.
