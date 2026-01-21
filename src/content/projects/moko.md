@@ -111,6 +111,8 @@ I ended up learning a ton about large scale projects.
 - Communication with external teams (AI Team and DevOps Team) could be better
 - Docker is a must-have for this architecture
 
+The feedback that we got from our tutors was really positive, they appreciated the time we spent specifying and following our code conventions, designing the architecture and writing clean code.
+
 > *Pssst*
 >
 > When a user creates a new profile, they automatically get a random picture from the best API the world has ever seen. [Click here](https://thecatapi.com/) for more information.
