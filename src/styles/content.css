@@ -2,8 +2,12 @@
     @apply dark:hover:text-gruvbox-accent hover:text-gruvbox-accent-l transition-colors underline cursor-pointer;
 }
 
+#content strong {
+    @apply font-bold text-gruvbox-accent;
+}
+
 #content h1 {
-    @apply text-lg my-2 text-gruvbox-fg
+    @apply text-lg my-2 text-gruvbox-fg;
 }
 
 #content img {
@@ -31,5 +35,9 @@
 }
 
 #content hr {
-    @apply my-2 border-0
+    @apply my-2 border-0;
+}
+
+#content th {
+    @apply px-8 uppercase underline decoration-dotted decoration-2;
 }

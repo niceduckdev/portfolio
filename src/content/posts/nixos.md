@@ -3,12 +3,9 @@ title: Daily driving NixOS
 date: 2025-11-10
 ---
 
-I recently decided to install NixOS on my laptop.
+I've been running Debian for a while, the primary reason being the **stability**. I'm a college student and cannot afford to break my install after messing up a configuration.
 
-# Why
-I've been running Debian for a while, mainly for the stability. I am a college student and cannot afford to break my install after messing up a configuration.
-
-The primary reason for the switch is because I was interested in making my whole setup declaritive. More recent packages were a nice bonus.
+The primary reason for the switch is because I was interested in making my **whole setup declaritive**. Packages that were updated in the last 6 months were a nice bonus.
 
 # Configuration
 NixOS is configured by two files: `configuration.nix` and `hardware-configuration.nix`.
@@ -93,6 +90,3 @@ buildInputs = with pkgs; [ networkmanager alsa-utils bspwm ];
 Check out the source code on [Github](https://github.com/niceduckdev/dotfiles/blob/main/eww/logic/flake.nix).
 
 I completely rewrote my logic for the modules on my bar. Before the refactor it consisted of completely seperate scripts. I made functions for each module and merged them via one `logic.sh` script.
-
-# Conclusion
-Overall I am enjoying the change of mindset (imperative to declaritive), thanks for reading this post!

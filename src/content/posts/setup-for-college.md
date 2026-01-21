@@ -5,7 +5,7 @@ date: 2025-06-06
 
 Since I switched to Linux I have been looking for ways to be more productive as a student.
 
-I found a post written by Gilles Castel that explained his awesome way of making notes using Latex and Python scripts.
+I found a post written by **Gilles Castel** that explained his awesome way of making notes using Latex and Python scripts.
 
 > Read the original post on [Gilles' website](https://castel.dev/post/lecture-notes-3).
 

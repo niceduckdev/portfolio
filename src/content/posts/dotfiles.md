@@ -17,17 +17,16 @@ This led to me trying out a bunch of window managers and desktop environments. M
 
 # Current setup
 
-My current setup is based on NixOS and uses the bspwm window manager.
+My current setup is based on NixOS and uses the Sway window manager.
 
 > You can check out my dotfiles on [Github](https://github.com/niceduckdev/dotfiles).
 
 Here is a list of some of the tools that I use every day.
 - Shell: zsh
-- Editor: neovim & vscodium
+- Editor: neovim & zed 
 - Terminal: alacritty
 - Launcher: rofi
 - Browser: librewolf
-- File Manager: pcmanfm
 
 And here are some screenshots of my setup.
 

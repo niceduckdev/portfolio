@@ -58,14 +58,14 @@ const projects = await getAllProjects();
         <Column align={Align.START} gap={3}>
             {
                 projects.map((project: any) => (
-                    <Stack>
+					<Column align={Align.START}>
                         <Link
                             href={`/projects/${convertSlug(project.data.title)}`}
                         >
                             {formatMaxLength(project.data.title)}
                         </Link>
                         <p class="text-base">{project.data.description}</p>
-                    </Stack>
+					</Column>
                 ))
             }
         </Column>
