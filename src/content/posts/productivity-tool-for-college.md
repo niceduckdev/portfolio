@@ -1,5 +1,5 @@
 ---
-title: My custom tool that makes college easier
+title: My productivity tool for college
 date: 2025-06-06
 ---
 

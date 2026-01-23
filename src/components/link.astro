@@ -1,10 +1,11 @@
 ---
 const { href, target } = Astro.props;
+const active: boolean = Astro.url.pathname === href;
 ---
 
 <a
     href={href}
     target={target ?? "_self"}
-    class="dark:hover:text-gruvbox-accent hover:text-gruvbox-accent-l transition-colors underline cursor-pointer"
+    class={`${active && "dark:text-gruvbox-accent text-gruvbox-accent-l"} dark:hover:text-gruvbox-accent hover:text-gruvbox-accent-l transition-colors underline cursor-pointer`}
     ><slot /></a
 >

@@ -1,0 +1,49 @@
+---
+import Column from "@components/column.astro";
+import Image from "@components/image.astro";
+import Link from "@components/link.astro";
+import Navigation from "@components/navigation.astro";
+import Row from "@components/row.astro";
+import Title from "@components/title.astro";
+import Base from "@layouts/base.astro";
+import { Align } from "@lib/align";
+import { formatMaxLength } from "@lib/length";
+import { Size } from "@lib/size";
+import { convertSlug } from "@lib/slug";
+import { getAllProjects } from "@services/project-service";
+
+const projects = await getAllProjects();
+---
+
+<Base>
+    <Navigation />
+
+    <Column>
+        <Title>Projects</Title>
+        <Column gap={4}>
+            <Row>
+                <Image
+                    src="projects/moko/profile-mockup.webp"
+                    size={Size.MEDIUM}
+                />
+
+                <Image src="projects/home-automation.webp" size={Size.MEDIUM} />
+            </Row>
+
+            <Column align={Align.START} gap={3}>
+                {
+                    projects.map((project: any) => (
+                        <Column align={Align.START} gap={0}>
+                            <Link
+                                href={`/projects/${convertSlug(project.data.title)}`}
+                            >
+                                {formatMaxLength(project.data.title)}
+                            </Link>
+                            <p class="text-base">{project.data.description}</p>
+                        </Column>
+                    ))
+                }
+            </Column>
+        </Column>
+    </Column>
+</Base>

@@ -3,7 +3,7 @@
 }
 
 #content strong {
-    @apply font-bold text-gruvbox-accent;
+    @apply font-bold dark:text-gruvbox-fg text-gruvbox-bg;
 }
 
 #content h1 {
@@ -11,7 +11,7 @@
 }
 
 #content img {
-    @apply rounded-md border-4;
+    @apply rounded-md border-3;
 }
 
 #content ul {
@@ -19,7 +19,7 @@
 }
 
 #content blockquote {
-    @apply ml-2 my-2 border-l-4 border-gruvbox-accent px-4 py-1;
+    @apply ml-2 my-2 border-l-3 border-gruvbox-accent px-4 py-1;
 }
 
 #content code:not(pre > code) {

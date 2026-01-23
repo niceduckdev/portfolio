@@ -1,24 +1,20 @@
 ---
 import Column from "@components/column.astro";
-import Image from "@components/image.astro";
 import Link from "@components/link.astro";
-import Nav from "@components/nav.astro";
+import Navigation from "@components/navigation.astro";
 import Quote from "@components/quote.astro";
-import Stack from "@components/stack.astro";
 import Title from "@components/title.astro";
 import Base from "@layouts/base.astro";
 import { Align } from "@lib/align";
 import { formatMaxLength } from "@lib/length";
 import { convertSlug } from "@lib/slug";
 import { getAllPosts } from "@services/post-service";
-import { getAllProjects } from "@services/project-service";
 
 const posts = await getAllPosts(false);
-const projects = await getAllProjects();
 ---
 
 <Base>
-    <Nav />
+    <Navigation />
 
     <Column gap={2}>
         <p>
@@ -26,8 +22,8 @@ const projects = await getAllProjects();
             websites, software and other technological stuff.
         </p>
         <Quote>
-            <Link href="/posts/about-me">Click here</Link> if you want to learn more
-            about me.
+            <Link href="/articles/about-me">Click here</Link> if you want to learn
+            more about me.
         </Quote>
         <p>
             Contact me via
@@ -41,31 +37,13 @@ const projects = await getAllProjects();
     </Column>
 
     <Column>
-        <Title>Posts 📝</Title>
+        <Title>Articles</Title>
         <Column align={Align.START} gap={3}>
             {
                 posts.map((post: any) => (
-                    <Link href={`/posts/${convertSlug(post.data.title)}`}>
+                    <Link href={`/articles/${convertSlug(post.data.title)}`}>
                         {formatMaxLength(post.data.title)}
                     </Link>
-                ))
-            }
-        </Column>
-    </Column>
-
-    <Column>
-        <Title>Projects 🔨</Title>
-        <Column align={Align.START} gap={3}>
-            {
-                projects.map((project: any) => (
-					<Column align={Align.START}>
-                        <Link
-                            href={`/projects/${convertSlug(project.data.title)}`}
-                        >
-                            {formatMaxLength(project.data.title)}
-                        </Link>
-                        <p class="text-base">{project.data.description}</p>
-					</Column>
                 ))
             }
         </Column>

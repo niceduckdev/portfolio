@@ -23,7 +23,7 @@ My current setup is based on NixOS and uses the Sway window manager.
 
 Here is a list of some of the tools that I use every day.
 - Shell: zsh
-- Editor: neovim & zed 
+- Editor: neovim & zed
 - Terminal: alacritty
 - Launcher: rofi
 - Browser: librewolf
@@ -31,7 +31,7 @@ Here is a list of some of the tools that I use every day.
 And here are some screenshots of my setup.
 
 ![Setup while writing this post](/images/posts/dotfiles/post.webp)
-Writing an old version of this post
+*Writing an old version of this post*
 
 ![Setup while editing code](/images/posts/dotfiles/code.webp)
-Editing the PanelController in my MVC project
+*Editing the PanelController in my MVC project*
