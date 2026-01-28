@@ -1,0 +1,12 @@
+---
+import { getGap } from "@lib/gap";
+import { getAlign } from "@lib/align";
+import { getJustify } from "@lib/justify";
+const { gap, align, justify, fill } = Astro.props;
+---
+
+<section
+    class={`flex flex-col ${getGap(gap)} ${getAlign(align)} ${getJustify(justify)} ${fill ? "h-full" : ""}`}
+>
+    <slot />
+</section>

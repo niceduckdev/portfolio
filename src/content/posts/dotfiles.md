@@ -1,5 +1,8 @@
 ---
-title: My dotfiles and journey in the Linux ecosystem
+title: Dotfiles
+description: My dotfiles and journey in the Linux ecosystem.
+tags: ["linux", "dotfiles"]
+image: code.webp
 date: 2025-06-05
 ---
 
@@ -30,8 +33,8 @@ Here is a list of some of the tools that I use every day.
 
 And here are some screenshots of my setup.
 
-![Setup while writing this post](/images/posts/dotfiles/post.webp)
+![Setup while writing this post](post.webp)
 *Writing an old version of this post*
 
-![Setup while editing code](/images/posts/dotfiles/code.webp)
+![Setup while editing code](code.webp)
 *Editing the PanelController in my MVC project*

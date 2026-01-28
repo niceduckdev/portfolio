@@ -1,7 +1,8 @@
 ---
-title: Chiro Stam - Stampot
-description: Website for my Chiro. Made using Astro and Tailwind, hosted on Cloudflare Pages
-image: chiro-stam.webp
+title: Stampot
+description: Online ordering platform for Chiro Stam.
+tags: ["vue", "pocketbase", "tailwind"]
+image: home.webp
 date: 2025-10-25
 ---
 
@@ -32,7 +33,7 @@ The frontend was developed with VueJS and a custom component library, designed s
         label="Naam"
         placeholder="Naam"
     />
-    
+
     <Input
         v-model="registration.email"
         label="Emailadres"

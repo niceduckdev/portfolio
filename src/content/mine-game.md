@@ -1,7 +1,8 @@
 ---
 title: Mine Game
-description: Small game where you play as a submarine trying to destroy all mines in the ocean. Made in C for the Arduino UNO R3 in my first year at KdG
-image: mine-game.webp
+description: Low level game where you clear an ocean filled with mines.
+tags: ["c", "arduino"]
+image: generate-mines.webp
 date: 2024-06-01
 ---
 
@@ -11,5 +12,4 @@ The implementation was done in C, where I constructed a custom engine without re
 
 This project served as my introduction to low-level embedded systems programming, from which I learned a lot. You can check out the source code via [this repository](https://github.com/niceduckdev/mine-game).
 
-# Screenshots
-![Level generator](/images/projects/mine-game.webp)
+![Level generator](generate-mines.webp)

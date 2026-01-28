@@ -1,7 +1,8 @@
 ---
 title: Global Gourmet
-description: Website for a restaurant. Made using VueJS, Tailwind and Pocketbase, hosted on Cloudflare Pages
-image: global-gourmet.webp
+description: Website + Blog for fictional restaurant.
+tags: ["vue", "tailwind", "pocketbase", "cloudflare pages"]
+image: blog.webp
 date: 2024-12-20
 ---
 
@@ -13,5 +14,4 @@ The entire project is deployed on Cloudflare Pages.
 
 While VueJS's single-page application router excelled at client-side interactivity, the project's requirements would have been better served by a server-side approach given the limited need for dynamic functionality.
 
-# Screenshots
-![Global Gourmet](/images/projects/global-gourmet.webp)
+![Global Gourmet](blog.webp)

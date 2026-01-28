@@ -1,7 +1,8 @@
 ---
-title: Home Automation Application
-description: Application to manage smart-devices made using React, Tailwind and Pocketbase. Made in my third year at KdG
-image: citizen-panels/citizens.webp
+title: Home Automation
+description: Application to manage smart-devices.
+tags: ["react", "tailwind", "pocketbase"]
+image: floors.webp
 date: 2025-11-04
 ---
 
@@ -11,6 +12,5 @@ We were orignally supposed to use a mock backend like `json-server` but we also 
 
 This was my first real project in React. I learned a lot about tackling such a large project, even though I had a lot of experience using Vue and Astro.
 
-# Screenshots
-![Floorplan](/images/projects/home-automation.webp)
+![Floorplan](floors.webp)
 *Admin managing the floor plan*

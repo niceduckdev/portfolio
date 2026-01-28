@@ -1,34 +1,32 @@
 ---
-import Column from "@components/column.astro";
-import Link from "@components/link.astro";
+import Articles from "@components/articles.astro";
+import Column from "@components/modular/column.astro";
 import Navigation from "@components/navigation.astro";
-import Quote from "@components/quote.astro";
-import Title from "@components/title.astro";
 import Base from "@layouts/base.astro";
-import { Align } from "@lib/align";
-import { formatMaxLength } from "@lib/length";
-import { convertSlug } from "@lib/slug";
-import { getAllPosts } from "@services/post-service";
-
-const posts = await getAllPosts(false);
+import Link from "@modular/link.astro";
+import Quote from "@modular/quote.astro";
 ---
 
 <Base>
     <Navigation />
 
-    <Column gap={2}>
+    <Column>
         <p>
             My name is Kaj and I'm a student at KdG in Antwerp. I love creating
             websites, software and other technological stuff.
         </p>
+
         <Quote>
             <Link href="/articles/about-me">Click here</Link> if you want to learn
             more about me.
         </Quote>
+
         <p>
             Contact me via
             <Link href="mailto:contact@niceduck.dev" target="_blank"
                 >contact@niceduck.dev</Link
+            > or <Link href="https://linkedin.com/in/kaj-botty" target="_blank"
+                >LinkedIn</Link
             > and check out my projects on <Link
                 href="https://github.com/niceduckdev"
                 target="_blank">Github</Link
@@ -36,16 +34,5 @@ const posts = await getAllPosts(false);
         </p>
     </Column>
 
-    <Column>
-        <Title>Articles</Title>
-        <Column align={Align.START} gap={3}>
-            {
-                posts.map((post: any) => (
-                    <Link href={`/articles/${convertSlug(post.data.title)}`}>
-                        {formatMaxLength(post.data.title)}
-                    </Link>
-                ))
-            }
-        </Column>
-    </Column>
+    <Articles />
 </Base>

@@ -1,5 +1,8 @@
 ---
 title: Daily driving NixOS
+description: My experience switching from Debian to NixOS.
+tags: ["nixos", "linux"]
+image: setup.webp
 date: 2025-11-10
 ---
 

@@ -1,0 +1,18 @@
+---
+const { src, fill = true } = Astro.props;
+---
+
+{
+    fill ? (
+        <section
+            style={`background-image: url('${`/images/${src}`}')`}
+            class="rounded-md border-3 w-full h-36 bg-cover"
+        />
+    ) : (
+        <img
+            src={`/images/${src}`}
+            alt={src}
+            class="rounded-md border-3 w-full bg-cover"
+        />
+    )
+}

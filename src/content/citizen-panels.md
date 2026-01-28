@@ -1,7 +1,8 @@
 ---
 title: Citizen Panels
-description: Application for citizen panels made using C#, ASP.NET and PostgreSQL. Made in my second year at KdG
-image: citizen-panels/citizens.webp
+description: Application to organise citizen panels.
+tags: ["c#", "asp.net", "postgresql", "tailwind", "vite"]
+image: citizens.webp
 date: 2025-05-28
 ---
 
@@ -19,9 +20,8 @@ This application was made in team using the following stack.
 
 My primary contribution was to the user experience. I designed and implemented the interface for the entire application over the course of 250 development hours.
 
-# Screenshots
-![Citizens](/images/projects/citizen-panels/citizens.webp)
+![Citizens](citizens.webp)
 *Citizens visiting a panel*
 
-![Organisations](/images/projects/citizen-panels/organisations.webp)
+![Organisations](organisations.webp)
 *Organisations managing a panel*

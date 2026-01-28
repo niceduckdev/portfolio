@@ -1,5 +1,8 @@
 ---
-title: My productivity tool for college
+title: Productivity tool for college
+description: How I increased my productivity in college.
+tags: ["bash", "college"]
+image: ls.webp
 date: 2025-06-06
 ---
 

@@ -1,6 +1,7 @@
 export enum Align {
     CENTER,
-    START
+    START,
+    END,
 }
 
 export function getAlign(align: Align) {
@@ -9,6 +10,8 @@ export function getAlign(align: Align) {
             return "items-center";
         case Align.START:
             return "items-start";
+        case Align.END:
+            return "items-end";
         default:
             return "";
     }

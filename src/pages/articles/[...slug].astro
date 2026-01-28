@@ -1,45 +1,38 @@
 ---
-import Column from "@components/column.astro";
-import Link from "@components/link.astro";
-import Row from "@components/row.astro";
-import Stack from "@components/stack.astro";
-import Title from "@components/title.astro";
+import Column from "@modular/column.astro";
+import Link from "@modular/link.astro";
+import Row from "@modular/row.astro";
+import Stack from "@modular/stack.astro";
+import Title from "@modular/title.astro";
 import Base from "@layouts/base.astro";
 import { Align } from "@lib/align";
 import { formatDate } from "@lib/date";
-import { convertSlug } from "@lib/slug";
-import { getTime } from "@lib/time";
-import { getAllPosts } from "@services/post-service";
-import { render } from "astro:content";
+import { getGap } from "@lib/gap";
+import { getPaths, getReadTime, renderArticle } from "@services/article";
 
 export async function getStaticPaths() {
-    const posts = await getAllPosts(true);
-    return posts.map((post: any) => ({
-        params: {
-            slug: convertSlug(post.data.title),
-        },
-        props: { post },
-    }));
+    return getPaths();
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { article } = Astro.props;
+const { Content } = await renderArticle(article);
 ---
 
 <Base>
-	<Column align={Align.START}>
-		<Link href="/">← Back</Link>
-	</Column>
+    <Column align={Align.START}>
+        <Link href="/">← Back</Link>
+    </Column>
 
     <Column>
         <Stack>
-            <Title>{post.data.title}</Title>
+            <Title>{article.title}</Title>
             <Row>
-                <p>{formatDate(post.data.date)}</p>
-                <p>{getTime(post.body)} min read</p>
+                <p>{formatDate(article.date)}</p>
+                <p>{getReadTime(article)} min read</p>
             </Row>
         </Stack>
-        <section id="content" class="flex flex-col gap-3">
+
+        <section id="content" class={`flex flex-col ${getGap(2)}`}>
             <Content />
         </section>
     </Column>

@@ -1,11 +1,14 @@
 ---
-import Column from "@components/column.astro";
-import Link from "@components/link.astro";
-import Title from "@components/title.astro";
+import Navigation from "@components/navigation.astro";
 import Base from "@layouts/base.astro";
+import Column from "@modular/column.astro";
+import Link from "@modular/link.astro";
+import Title from "@modular/title.astro";
 ---
 
 <Base>
+    <Navigation />
+
     <Column>
         <Title>404</Title>
         <Column gap={2}>

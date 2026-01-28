@@ -1,7 +1,8 @@
 ---
 title: Four Colors
-description: Multiplayer clone of Uno, Made using Java in my first year at KdG
-image: four-colors.webp
+description: Multiplayer clone of Uno.
+tags: ["java", "javafx"]
+image: cards.webp
 date: 2024-01-20
 ---
 
@@ -11,5 +12,4 @@ My initiative led to a custom system for managing the Models, Views and Presente
 
 The project was later expanded to include online multiplayer, powered by the Kryonet networking library. You can check out the source code via [this repository](https://github.com/niceduckdev/four-colors).
 
-# Screenshots
-![Game logic](/images/projects/four-colors.webp)
+![Game logic](cards.webp)
