@@ -10,6 +10,8 @@ date: 2025-11-13
 
 Our goal was to create a platform where users could buy digital board games, play them with friends, and build a community without jumping between different services.
 
+> I was mainly responsible for designing and building the platform frontend. I also spent considerable time refactoring backend microservices (mainly the transport and service layers) so they worked smoothly with the frontend.
+
 # Core Features
 > **Store & Library Management**<br>
 > Browse and purchase (integration with a payment service) digital board games + manage your personal library
@@ -121,7 +123,7 @@ The feedback that we got from our tutors was really positive, they appreciated t
 # Showcase
 You can check out the following demo video for a showcase of our platform.
 
-<iframe height="315" class="rounded-md border-4" src="https://www.youtube.com/embed/cTVb87V25zY?si=hOp5FZPEUvFjKMmi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe height="315" class="rounded-md border-2" src="https://www.youtube.com/embed/cTVb87V25zY?si=hOp5FZPEUvFjKMmi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ![Store Page](store.webp)
 *Store Page showing Tic Tac Toe and Checkers*

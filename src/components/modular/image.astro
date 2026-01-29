@@ -1,18 +1,24 @@
 ---
-const { src, fill = true } = Astro.props;
+const { src, fill = true, hover = false } = Astro.props;
+
+const path: string = `/images/${src}`;
+
+const outer = "rounded-md border-2 w-full min-h-36 overflow-hidden";
+const inner =
+    "w-full h-full bg-cover bg-center bg-no-repeat " +
+    "transform-gpu transition-transform duration-300 ease-out";
+const zoom = "hover:scale-[1.05]";
 ---
 
 {
     fill ? (
-        <section
-            style={`background-image: url('${`/images/${src}`}')`}
-            class="rounded-md border-3 w-full h-36 bg-cover"
-        />
+        <section class={outer}>
+            <section
+                style={`background-image: url('${path}')`}
+                class={`${inner} ${hover && zoom}`}
+            />
+        </section>
     ) : (
-        <img
-            src={`/images/${src}`}
-            alt={src}
-            class="rounded-md border-3 w-full bg-cover"
-        />
+        <img src={path} alt={src} class="rounded-md border-2 w-full" />
     )
 }

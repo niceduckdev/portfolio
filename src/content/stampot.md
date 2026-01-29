@@ -4,6 +4,7 @@ description: Online ordering platform for Chiro Stam.
 tags: ["vue", "pocketbase", "tailwind"]
 image: home.webp
 date: 2025-10-25
+hidden: true
 ---
 
 Every year, Chiro Stam hosts an event where members and their families can come together to enjoy a delicious spaghetti meal.

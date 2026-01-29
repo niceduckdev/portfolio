@@ -12,16 +12,15 @@
     --font-sans: "Nunito", "sans-serif";
     --font-code: "Mononoki", "code";
 
-    --color-gruvbox-bg: #282828;
-    --color-gruvbox-fg: #ebdbb2;
-    --color-gruvbox-fg-2: #7c6f64;
-    --color-gruvbox-accent: #d79921;
+    --color-gruvbox-bg: #121212;
+    --color-gruvbox-fg: #f4f4f4;
+    --color-gruvbox-fg-2: #bbbbbb;
+    --color-gruvbox-accent: #ffba7b;
 
-    --color-gruvbox-bg-l: #fbf1c7;
-    --color-gruvbox-fg-l: #3c3836;
-    --color-gruvbox-fg-2-l: #7c6f64;
-    --color-gruvbox-accent-l: #d79921;
+    --color-gruvbox-bg-l: #f4f4f4;
+    --color-gruvbox-fg-l: #121212;
+    --color-gruvbox-fg-2-l: #121212;
+    --color-gruvbox-accent-l: #6099c0;
 }
-
 
 @import "./content.css";

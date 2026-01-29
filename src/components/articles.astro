@@ -33,6 +33,7 @@ const articles: Article[] = await getArticles();
                     >
                         <Image
                             src={`articles/${convertSlug(article.title)}/${article.image}`}
+                            hover={true}
                         />
 
                         <section class="py-2">

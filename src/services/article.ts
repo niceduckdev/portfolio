@@ -1,4 +1,3 @@
-import { sortOnDate } from "@lib/date";
 import { fromContent, type Article } from "@models/article";
 import { getCollection, render, type RenderResult } from "astro:content";
 
@@ -12,8 +11,15 @@ export async function getArticles(all: boolean = false): Promise<Article[]> {
     );
 }
 
+function sortOnDate(collection: Article[]): Article[] {
+    return collection.sort((a: Article, b: Article) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+}
+
 export async function getPaths() {
     const articles = await getArticles(true);
+
     return articles.map((article) => ({
         params: { slug: article.slug },
         props: { article },
