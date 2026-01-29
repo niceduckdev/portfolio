@@ -19,7 +19,7 @@
 }
 
 #content blockquote {
-    @apply ml-2 my-2 border-l-3 border-accent px-4 py-1;
+    @apply ml-2 my-2 border-l-3 border-accent-l dark:border-accent px-4 py-1;
 }
 
 #content code:not(pre > code) {
