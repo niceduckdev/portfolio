@@ -5,7 +5,7 @@ const { href, target } = Astro.props;
 <a
     href={href}
     target={target ?? "_self"}
-    class="border-2 border-gruvbox-fg-2 hover:border-gruvbox-accent hover:text-gruvbox-accent transition-colors rounded-md text-center cursor-pointer"
+    class="border-2 dark:border-mid border-mid-l hover:border-accent hover:text-accent transition-colors rounded-md text-center cursor-pointer"
 >
     <slot />
 </a>

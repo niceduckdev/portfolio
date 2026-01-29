@@ -1,13 +1,13 @@
 #content a {
-    @apply dark:hover:text-gruvbox-accent hover:text-gruvbox-accent-l transition-colors underline cursor-pointer;
+    @apply dark:hover:text-accent hover:text-accent-l transition-colors underline cursor-pointer;
 }
 
 #content strong {
-    @apply font-bold dark:text-gruvbox-accent text-gruvbox-accent-l;
+    @apply font-bold dark:text-accent text-accent-l;
 }
 
 #content h1 {
-    @apply text-lg my-2 text-gruvbox-fg;
+    @apply text-lg my-2 text-light;
 }
 
 #content img {
@@ -19,11 +19,11 @@
 }
 
 #content blockquote {
-    @apply ml-2 my-2 border-l-3 border-gruvbox-accent px-4 py-1;
+    @apply ml-2 my-2 border-l-3 border-accent px-4 py-1;
 }
 
 #content code:not(pre > code) {
-    @apply font-code bg-gruvbox-fg-2 text-sm py-0.5 px-1 rounded-md text-gruvbox-bg;
+    @apply font-code bg-mid-l dark:bg-mid text-sm py-0.5 px-1 rounded-md text-dark;
 }
 
 #content pre {
@@ -31,7 +31,7 @@
 }
 
 #content pre code {
-    @apply font-code text-sm py-0.5 rounded-md text-gruvbox-fg-2;
+    @apply font-code text-sm py-0.5 rounded-md text-mid;
 }
 
 #content hr {
