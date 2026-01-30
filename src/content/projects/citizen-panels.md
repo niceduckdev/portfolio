@@ -5,7 +5,7 @@ tags: ["c#", "asp.net", "postgresql", "tailwind", "vite"]
 team:
   - name: "Lee"
     website: "https://leeco.dev"
-  - name: "Matthias"
+  - name: "Mathias"
     website: "https://mathiasm.dev/projects/burgerpanels"
   - name: "Olivier"
 image: citizens.webp

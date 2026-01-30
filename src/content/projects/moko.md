@@ -5,7 +5,7 @@ tags: ["java", "spring boot", "docker", "react", "tailwind"]
 team:
   - name: "Lee"
     website: "https://leeco.dev"
-  - name: "Matthias"
+  - name: "Mathias"
     website: "https://mathiasm.dev/projects/moko-games"
   - name: "Matti"
 image: profile-mockup.webp
