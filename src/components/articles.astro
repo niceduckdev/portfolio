@@ -1,16 +1,10 @@
 ---
 import { Align } from "@lib/align";
-import { formatDate } from "@lib/date";
-import { getGap } from "@lib/gap";
-import { Justify } from "@lib/justify";
-import { formatMaxLength } from "@lib/length";
-import { convertSlug } from "@lib/slug";
 import type { Article } from "@models/article";
+import Card from "@modular/card.astro";
 import Column from "@modular/column.astro";
-import Image from "@modular/image.astro";
-import Link from "@modular/link.astro";
 import Title from "@modular/title.astro";
-import { getArticles } from "@services/article";
+import { getArticles } from "@services/articles";
 
 const articles: Article[] = await getArticles();
 ---
@@ -19,8 +13,7 @@ const articles: Article[] = await getArticles();
     <Column gap={0}>
         <Title>articles</Title>
         <p>
-            Learn more about my experience as a student and software engineer,
-            and the projects I’ve built along the way.
+            Learn more about my experience as a student and software engineer.
         </p>
     </Column>
 
@@ -28,45 +21,10 @@ const articles: Article[] = await getArticles();
         {
             articles.map((article: Article) => {
                 return (
-                    <article
-                        class={`grid grid-cols-1 sm:grid-cols-[200px_1fr] ${getGap(4)}`}
-                    >
-                        <Image
-                            src={`articles/${convertSlug(article.title)}/${article.image}`}
-                            hover={true}
-                        />
-
-                        <section class="py-2">
-                            <Column
-                                justify={Justify.BETWEEN}
-                                gap={1}
-                                fill={true}
-                            >
-                                <Column align={Align.START} gap={1}>
-                                    <Column gap={0}>
-                                        <Link
-                                            href={`/articles/${article.slug}`}
-                                        >
-                                            <h2 class="text-lg">
-                                                {article.title}
-                                            </h2>
-                                        </Link>
-                                        <p class="text-sm">
-                                            {formatDate(article.date)}
-                                        </p>
-                                    </Column>
-
-                                    <p>
-                                        {formatMaxLength(
-                                            article.description,
-                                            75,
-                                        )}
-                                    </p>
-                                </Column>
-                                <p>{article.tags.join("  |  ")}</p>
-                            </Column>
-                        </section>
-                    </article>
+                    <Card
+                        content={article}
+                        href={`/articles/${article.slug}`}
+                    />
                 );
             })
         }

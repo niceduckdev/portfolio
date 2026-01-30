@@ -1,0 +1,30 @@
+---
+import { Align } from "@lib/align";
+import type { Project } from "@models/project";
+import Card from "@modular/card.astro";
+import Column from "@modular/column.astro";
+import Title from "@modular/title.astro";
+import { getProjects } from "@services/projects";
+
+const projects: Project[] = await getProjects();
+---
+
+<Column>
+    <Column gap={0}>
+        <Title>projects</Title>
+        <p>Check out some of the projects I've built along the way.</p>
+    </Column>
+
+    <Column align={Align.START} gap={4}>
+        {
+            projects.map((project: Project) => {
+                return (
+                    <Card
+                        content={project}
+                        href={`/projects/${project.slug}`}
+                    />
+                );
+            })
+        }
+    </Column>
+</Column>

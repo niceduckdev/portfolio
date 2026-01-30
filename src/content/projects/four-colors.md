@@ -2,6 +2,8 @@
 title: Four Colors
 description: Multiplayer clone of Uno.
 tags: ["java", "javafx"]
+team:
+  - name: "Jonah"
 image: cards.webp
 date: 2024-01-20
 ---

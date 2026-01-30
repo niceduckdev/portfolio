@@ -2,6 +2,12 @@
 title: Citizen Panels
 description: Application to organise citizen panels.
 tags: ["c#", "asp.net", "postgresql", "tailwind", "vite"]
+team:
+  - name: "Lee"
+    website: "https://leeco.dev"
+  - name: "Matthias"
+    website: "https://mathiasm.dev/projects/burgerpanels"
+  - name: "Olivier"
 image: citizens.webp
 date: 2025-05-28
 ---

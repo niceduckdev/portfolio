@@ -1,0 +1,43 @@
+---
+import Column from "@modular/column.astro";
+import Link from "@modular/link.astro";
+import Row from "@modular/row.astro";
+import Stack from "@modular/stack.astro";
+import Title from "@modular/title.astro";
+import Base from "@layouts/base.astro";
+import { Align } from "@lib/align";
+import { formatDate } from "@lib/date";
+import { getGap } from "@lib/gap";
+import { getReadTime } from "@services/content";
+import type { Article } from "@models/article";
+import type { Project } from "@models/project";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+interface Props {
+    content: Article | Project;
+    file: AstroComponentFactory;
+}
+
+const { content, file: File } = Astro.props;
+---
+
+<Base>
+    <Column align={Align.START}>
+        <Link href="/">← Back</Link>
+    </Column>
+
+    <Column>
+        <Stack>
+            <Title>{content.title}</Title>
+            <Row>
+                <p>{formatDate(content.date)}</p>
+                <p>{getReadTime(content.content.body!)} min read</p>
+            </Row>
+            <slot name="team" />
+        </Stack>
+
+        <section id="content" class={`flex flex-col ${getGap(2)}`}>
+            <File />
+        </section>
+    </Column>
+</Base>

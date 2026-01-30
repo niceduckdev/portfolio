@@ -1,0 +1,47 @@
+---
+import Content from "@components/content.astro";
+import Link from "@components/modular/link.astro";
+import type { Project, User } from "@models/project";
+import { getPaths, render } from "@services/content";
+import { getProjects } from "@services/projects";
+
+export async function getStaticPaths() {
+    const projects: Project[] = await getProjects();
+    return getPaths(projects);
+}
+
+const { content } = Astro.props;
+const project: Project = content as Project;
+const { Content: file } = await render(content);
+---
+
+<Content content={project} file={file}>
+    {
+        project.team && project.team.length > 0 && (
+            <p slot="team">
+                Built together with{" "}
+                {project.team.map((user: User, index) => (
+                    <>
+                        {index > 0 &&
+                            project.team.length > 2 &&
+                            index === project.team.length - 1 &&
+                            ", and "}
+                        {index > 0 && project.team.length === 2 && " and "}
+                        {index > 0 &&
+                            project.team.length > 2 &&
+                            index < project.team.length - 1 &&
+                            ", "}
+
+                        {user.website ? (
+                            <Link href={user.website} target="_blank">
+                                {user.name}
+                            </Link>
+                        ) : (
+                            user.name
+                        )}
+                    </>
+                ))}
+            </p>
+        )
+    }
+</Content>

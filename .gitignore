@@ -1,24 +1,29 @@
-# build output
+node_modules
 dist/
-
-# generated types
-.astro/
-
-# dependencies
-node_modules/
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
+*.tsbuildinfo
 .DS_Store
+_site/
+.astro/
+scripts/smoke/*-main/
+scripts/memory/project/src/pages/
+benchmark/projects/
+benchmark/results/
+test-results/
+*.log
+package-lock.json
+.turbo/
+.eslintcache
+.pnpm-store
 
-# jetbrains setting folder
-.idea/
+*.env
+
+packages/astro/src/**/*.prebuilt.ts
+packages/astro/src/**/*.prebuilt-dev.ts
+packages/astro/test/units/_temp-fixtures/*
+!packages/astro/test/units/_temp-fixtures/package.json
+packages/integrations/**/.netlify/
+
+packages/**/test/**/fixtures/**/.astro/
+packages/**/test/**/fixtures/**/env.d.ts
+packages/**/e2e/**/fixtures/**/.astro/
+packages/**/e2e/**/fixtures/**/env.d.ts

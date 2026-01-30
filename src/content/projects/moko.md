@@ -2,6 +2,12 @@
 title: Moko
 description: Online platform for board games with multiplayer support.
 tags: ["java", "spring boot", "docker", "react", "tailwind"]
+team:
+  - name: "Lee"
+    website: "https://leeco.dev"
+  - name: "Matthias"
+    website: "https://mathiasm.dev/projects/moko-games"
+  - name: "Matti"
 image: profile-mockup.webp
 date: 2025-11-13
 ---
