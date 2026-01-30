@@ -5,7 +5,7 @@ import { getArticles } from "@services/articles";
 import { getPaths, render } from "@services/content";
 
 export async function getStaticPaths() {
-    const articles: Article[] = await getArticles();
+    const articles: Article[] = await getArticles(true);
     return getPaths(articles);
 }
 
