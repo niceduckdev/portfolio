@@ -23,7 +23,7 @@ Right now I am in my third year of the **"Applied Computer Science"** bachelor a
 # Tools & Equipment
 My workflow is built around a core set of development tools. I only run Linux on my machines and servers.
 
-You can read more about my **journey in the linux world** and my current setup in [this post](/posts/dotfiles).
+You can read more about my **journey in the linux world** and my current setup in [this article](/articles/dotfiles).
 
 # Contact
 Contact me via [contact@niceduck.dev](mailto:contact@niceduck.dev) and check out my projects on [Github](https://github.com/niceduckdev).
