@@ -12,7 +12,7 @@ image: profile-mockup.webp
 date: 2025-11-13
 ---
 
-> This project was an assignment of the Integration Project 3 course. All students were split up based on their major (Developers, AI and Deployment / DevOps). This meant that we had to communicate with external teams for the first time during our Bachelor's Degree.
+> This project was the assignment for the Integration Project 3 course. All students were split up based on their major (Developers, AI and Deployment / DevOps). This meant that we had to communicate with external teams for the first time during our Bachelor's Degree.
 
 Our goal was to create a platform where users could buy digital board games, play them with friends, and build a community without jumping between different services.
 
