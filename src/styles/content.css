@@ -7,7 +7,7 @@
 }
 
 #content h1 {
-    @apply text-lg my-2 text-light;
+    @apply text-lg my-2 text-dark dark:text-light;
 }
 
 #content img {
