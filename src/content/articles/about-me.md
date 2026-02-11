@@ -7,7 +7,7 @@ date: 2026-01-28
 hidden: true
 ---
 
-Hi there! I'm Kaj, a developer and student based in Antwerp, Belgium.
+Hi there! I'm Kaj, a developer and software engineer based in Antwerp, Belgium.
 
 I am currently studying Applied Computer Science at KdG in Antwerp.
 
