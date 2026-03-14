@@ -7,7 +7,7 @@ const outer = "rounded-md border-2 w-full min-h-36 overflow-hidden";
 const inner =
     "w-full h-full bg-cover bg-center bg-no-repeat " +
     "transform-gpu transition-transform duration-300 ease-out";
-const zoom = "hover:scale-[1.05]";
+const zoom = "group-hover:scale-[1.05]";
 ---
 
 {
@@ -19,6 +19,6 @@ const zoom = "hover:scale-[1.05]";
             />
         </section>
     ) : (
-        <img src={path} alt={src} class="rounded-md border-2 w-full" />
+        <img src={path} alt={src} class={`rounded-md border-2 w-full`} />
     )
 }
