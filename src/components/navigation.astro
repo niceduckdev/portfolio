@@ -1,13 +1,22 @@
 ---
 import Column from "@modular/column.astro";
 import Row from "@modular/row.astro";
+import Link from "@modular/link.astro";
 ---
 
 <nav>
-    <Column gap={0}>
-        <h1 class="text-3xl dark:text-accent text-accent-l font-bold">
-            niceduckdev
-        </h1>
-        <h2>Student + Software Engineer</h2>
+    <Column>
+        <Column gap={0}>
+            <h1 class="text-3xl dark:text-accent text-accent-l font-bold">
+                Kaj Botty
+            </h1>
+            <h2>Student + Software Engineer</h2>
+        </Column>
+
+        <Row gap={3}>
+            <Link href="/">About</Link>
+            <Link href="/projects">Projects</Link>
+            <Link href="/articles">Articles</Link>
+        </Row>
     </Column>
 </nav>

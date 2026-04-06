@@ -1,0 +1,36 @@
+---
+import Column from "@components/modular/column.astro";
+import Title from "@components/modular/title.astro";
+import Navigation from "@components/navigation.astro";
+import Base from "@layouts/base.astro";
+import { Align } from "@lib/align";
+import type { Project } from "@models/project";
+import Card from "@modular/card.astro";
+import { getProjects } from "@services/projects";
+
+const projects: Project[] = await getProjects();
+---
+
+<Base>
+    <Navigation />
+
+    <Column>
+        <p>
+            Check out some of the projects I've built along the way. Some were
+            built as projects at KdG, some were built in my free time.
+        </p>
+
+        <Column align={Align.START} gap={4}>
+            {
+                projects.map((project: Project) => {
+                    return (
+                        <Card
+                            content={project}
+                            href={`/projects/${project.slug}`}
+                        />
+                    );
+                })
+            }
+        </Column>
+    </Column>
+</Base>
