@@ -8,7 +8,7 @@ team:
   - name: "Mathias"
     website: "https://mathiasm.dev"
 image: privacy.webp
-date: 2026-05-04
+date: 2026-05-01
 ---
 
 > This project was the assignment for a course designed for innovation and collaboration called "The Lab".
