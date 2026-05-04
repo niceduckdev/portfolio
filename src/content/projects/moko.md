@@ -14,7 +14,7 @@ date: 2025-11-13
 
 > This project was the assignment for the Integration Project 3 course. All students were split up based on their major (Developers, AI and Deployment / DevOps). This meant that we had to communicate with external teams for the first time during our Bachelor's Degree.
 
-Our goal was to create a platform where users could buy digital board games, play them with friends, and build a community without jumping between different services.
+Our goal was to create a platform where users could buy digital board games, play them with friends and build a community without jumping between different services.
 
 > I was mainly responsible for designing and building the platform frontend. I also spent considerable time refactoring backend microservices (mainly the transport and service layers) so they worked smoothly with the frontend.
 
@@ -50,7 +50,7 @@ The frontend of Moko was written in React using Tailwind, Zustand and Axios.
 We began the design process by experimenting in Figma before beginning to write code.
 
 ![Mockup of Profile Page](profile-mockup.webp)
-*Profile page mockup showcasing achievements, stats, and social features*
+*Profile page mockup showcasing achievements, stats and social features*
 
 These were our core principles while working on the frontend for Moko.
 - User-centric navigation
