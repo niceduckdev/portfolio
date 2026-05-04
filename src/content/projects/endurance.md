@@ -7,23 +7,23 @@ team:
     website: "https://leeco.dev"
   - name: "Mathias"
     website: "https://mathiasm.dev"
-image: profile-mockup.webp
+image: privacy.webp
 date: 2026-05-04
 ---
 
 > This project was the assignment for a course designed for innovation and collaboration called "The Lab".
 
-Our customer approached us with the idea of building a platform that helps veterans connect with other veterans, friends, family and therapists or other specialists.
+Our customer approached us with the idea of building a platform that helps veterans connect with other veterans, friends, family, and therapists or other specialists.
 
 We were drawn to this project because of how relevant it feels right now. Here's an overview of what we ended up building.
 - Web application for therapists and the support network (friends and family)
 - Mobile application for veterans
 - Backend & Algorithm
 
-> I was mainly responsible for designing and building the frontend of the web application. I also put together a custom Go backend starter template with domain driven design, layered architecture and a clear separation of concerns.
+> I was mainly responsible for designing and building the frontend of the web application. I also put together a custom Go backend starter template with domain driven design, layered architecture, and a clear separation of concerns.
 
 # Tech Stack
-We used this course as an opportunity to try out a completely new tech stack. We went with Go, Vue and Flutter. Lee and I already had some Vue experience and I had dabbled with Go before.
+We used this course as an opportunity to try out a completely new tech stack. We went with Go, Vue, and Flutter. Lee and I already had some Vue experience, and I had dabbled with Go before.
 
 # Paper
 We wrote a paper about the challenges we ran into and what we learned while building Endurance. You can check it out via [this link](/files/endurance.pdf).
