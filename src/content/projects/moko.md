@@ -10,6 +10,7 @@ team:
   - name: "Matti"
 image: profile-mockup.webp
 date: 2025-11-13
+highlighted: true
 ---
 
 > This project was the assignment for the Integration Project 3 course. All students were split up based on their major (Developers, AI and Deployment / DevOps). This meant that we had to communicate with external teams for the first time during our Bachelor's Degree.

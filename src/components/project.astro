@@ -9,33 +9,24 @@ import type { Project } from "@models/project";
 import Column from "@modular/column.astro";
 import Image from "@modular/image.astro";
 
-interface Props {
-    content: Article | Project;
-    href: string;
-}
-
-const { content, href } = Astro.props;
+const {project} = Astro.props;
 ---
 
 <article
-        class={`group relative grid grid-cols-1 sm:grid-cols-[200px_1fr] ${getGap(4)} isolate w-full`}
+        class={`group relative grid grid-cols-1 sm:grid-cols-[200px_1fr] ${getGap(4)}`}
 >
-    <a
-        href={href}
-        class="absolute inset-0 z-10 group"
-        aria-label={content.title}></a>
-    <Image src={`articles/${content.slug}/${content.image}`} hover={true} fill={true} />
+    <Image src={`articles/${project.slug}/${project.image}`} fill={true} />
 
     <section class="py-2">
         <Column justify={Justify.BETWEEN} gap={1} fill={true}>
             <Column align={Align.START} gap={1}>
                 <Column gap={0}>
-                    <h2 class="text-lg">{content.title}</h2>
-                    <p class="text-sm">{formatDate(content.date)}</p>
+                    <h2 class="text-lg">{project.title}</h2>
+                    <p class="text-sm">{formatDate(project.date)}</p>
                 </Column>
-                <p>{formatMaxLength(content.description, 75)}</p>
+                <p>{formatMaxLength(project.description, 75)}</p>
             </Column>
-            <p>{content.tags.join("  |  ")}</p>
+            <p>{project.tags.join("  |  ")}</p>
         </Column>
     </section>
 </article>

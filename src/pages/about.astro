@@ -1,0 +1,78 @@
+---
+import Column from "@components/modular/column.astro";
+import Text from "@components/modular/text.astro";
+import Bold from "@components/modular/bold.astro";
+import Separator from "@components/modular/separator";
+import List from "@components/modular/list.astro"
+import Image from "@components/modular/image.astro";
+import Title from "@components/modular/title.astro";
+import Navigation from "@components/navigation.astro";
+import Base from "@layouts/base.astro";
+import Link from "@modular/link.astro";
+import Quote from "@modular/quote.astro";
+---
+
+<Base>
+    <Navigation/>
+
+    <Column gap={4}>
+        <Quote>
+            Final-year student actively looking for a job in software development.
+        </Quote>
+
+        <Text>
+            I love building <b>backend services</b> (monolithic and microservices) that are <b>scalable</b> and <b>robust</b>.
+            On the frontend, I implement <b>responsive and intuitive interfaces</b> (web and mobile).
+        </Text>
+
+        <Text>
+            I write structured and scalable code while <b>communicating clearly</b> in team.
+        </Text>
+
+        <Text>
+            Right now, I'm in my final year of Applied Computer Science at KdG University of Applied Sciences in Antwerp.
+        </Text>
+
+        <Text>
+            I have experience in a lot of different programming languages and frameworks.
+        </Text>
+
+        <List>
+            <li>Java and Spring Boot</li>
+            <li>C# and the .NET Framework</li>
+            <li>Golang</li>
+            <li>Python</li>
+            <li>Node JS & Deno</li>
+            <li>Typescript & Javascript</li>
+            <li>React, Next JS, Vue and Astro</li>
+            <li>Docker</li>
+            <li>Git</li>
+            <li>CSS and Tailwind</li>
+            <li>SQL</li>
+            <li>...</li>
+        </List>
+
+        <Text>
+            You can contact me via
+            <Link href="mailto:contact@niceduck.dev" target="_blank"
+            >contact [at] niceduck [dot] dev
+            </Link>
+            or
+            <Link
+                    href="https://linkedin.com/in/kaj-botty"
+                    target="_blank">LinkedIn
+            </Link>
+            .
+            Check out my projects on
+            <Link
+                    href="https://github.com/niceduckdev"
+                    target="_blank">Github
+            </Link>
+            and take a look at my resume via
+            <Link href="/files/resume.pdf"
+            >this link
+            </Link>
+            .
+        </Text>
+    </Column>
+</Base>

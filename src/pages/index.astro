@@ -2,86 +2,49 @@
 import Column from "@components/modular/column.astro";
 import Text from "@components/modular/text.astro";
 import Bold from "@components/modular/bold.astro";
-import Seperator from "@components/modular/seperator.astro";
+import Separator from "../components/modular/separator.js";
 import Image from "@components/modular/image.astro";
 import Title from "@components/modular/title.astro";
 import Navigation from "@components/navigation.astro";
 import Base from "@layouts/base.astro";
 import Link from "@modular/link.astro";
 import Quote from "@modular/quote.astro";
+import Profile from "@components/profile.astro";
+import {getHighlightedProject} from "@services/projects.ts";
+import Card from "@components/modular/card.astro";
+
+const project = await getHighlightedProject();
 ---
 
 <Base>
-    <Navigation />
+    <Navigation/>
 
     <Column>
         <Column gap={4}>
+            <Profile/>
+
             <Column>
                 <Text>
                     Hi there! I'm Kaj, a developer and software engineer based
-                    in Antwerp, Belgium. I am currently studying Applied
-                    Computer Science at KdG in Antwerp.
+                    in Antwerp.
+                </Text>
+                    <Text>
+                    I am currently in my final year of Applied Computer Science at KdG University of Applied Sciences in Antwerp
                 </Text>
 
-                <Quote>
-                    Contact me via
-                    <Link href="mailto:contact@niceduck.dev" target="_blank"
-                        >contact [at] niceduck [dot] dev</Link
-                    > or <Link
-                        href="https://linkedin.com/in/kaj-botty"
-                        target="_blank">LinkedIn</Link
-                    > and check out my projects on <Link
-                        href="https://github.com/niceduckdev"
-                        target="_blank">Github</Link
-                    >. You can also view my resume via <Link href="/files/resume.pdf"
-                        >this link</Link
-                    >.
-                </Quote>
+                <Text>
+                    I enjoy the entire process of development, from designing and
+                    building <b>intuitive user interfaces</b> for websites and apps to
+                    architecting and implementing the <b>robust backend services</b> that
+                    make them work.
+                </Text>
+
             </Column>
 
-            <Image src="quack.webp" fill={false} />
-        </Column>
-
-        <Seperator />
-
-        <Column>
-            <Title>My Journey</Title>
-            <Text>
-                My journey in programming started <Bold>eight years ago</Bold>,
-                and it has evolved into a deep interest for building things that
-                live on the internet.
-            </Text>
-
-            <Text>
-                I enjoy the entire process of development, from designing and
-                building intuitive user interfaces for websites and apps to
-                architecting and implementing the robust backend services that
-                make them work.
-            </Text>
-
-            <Text>
-                Right now I am in my third year of the <Bold
-                    >"Applied Computer Science"</Bold
-                > bachelor at KdG in Antwerp.
-            </Text>
-        </Column>
-
-        <Seperator />
-
-        <Column>
-            <Title>Tools & Equipment</Title>
-            <Text>
-                My workflow is built around a core set of development tools. I
-                only run Linux on my machines and servers.
-            </Text>
-
-            <Text>
-                You can read more about my <Bold
-                    >journey in the linux world</Bold
-                > and my current setup in <Link href="/articles/dotfiles"
-                    >this article</Link
-                >.
-            </Text>
+            <Column>
+                <p>Check out "{project.title}", one of my favourite projects!</p>
+                <Card content={project} href={`/projects/${project.slug}`} />
+            </Column>
         </Column>
     </Column>
 </Base>

@@ -7,5 +7,10 @@ export async function getProjects(): Promise<Project[]> {
         (await getCollection("projects")).map((project) =>
             fromContent(project),
         ),
-    );
+    ).filter((project) => !project.hidden)
+}
+
+export async function getHighlightedProject(): Promise<Project> {
+    const projects = await getProjects();
+    return projects.filter((project) => project.highlighted)[0];
 }

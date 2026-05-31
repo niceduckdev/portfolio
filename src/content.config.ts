@@ -28,6 +28,7 @@ const projects = defineCollection({
         image: z.string(),
         date: z.union([z.date(), z.tuple([z.date(), z.date()])]),
         hidden: z.boolean().optional(),
+        highlighted: z.boolean().optional(),
     }),
 });
 

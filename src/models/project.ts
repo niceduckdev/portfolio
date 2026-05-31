@@ -15,6 +15,8 @@ export interface Project {
     image: string;
     date: Date;
     content: CollectionEntry<"projects">;
+    hidden: boolean;
+    highlighted: boolean,
 }
 
 export function fromContent(project: CollectionEntry<"projects">) {
@@ -27,5 +29,7 @@ export function fromContent(project: CollectionEntry<"projects">) {
         image: project.data.image as string,
         date: project.data.date as Date,
         content: project as CollectionEntry<"projects">,
+        hidden: project.data.hidden as boolean,
+        highlighted: project.data.highlighted as boolean
     } as Project;
 }

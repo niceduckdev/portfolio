@@ -4,6 +4,7 @@ dist/
 .DS_Store
 _site/
 .astro/
+.idea/
 scripts/smoke/*-main/
 scripts/memory/project/src/pages/
 benchmark/projects/
