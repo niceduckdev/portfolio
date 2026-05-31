@@ -12,6 +12,7 @@ import { getReadTime } from "@services/content";
 import type { Article } from "@models/article";
 import type { Project } from "@models/project";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import ArrowLeft from "./modular/icons/arrow-left.astro";
 
 interface Props {
     content: Article | Project;
@@ -24,7 +25,11 @@ const isProject = "team" in content;
 
 <Base>
     <Column align={Align.START}>
-        <Link href={isProject ?"/projects" : "/articles"}>← Back</Link>
+        <Link href={isProject ?"/projects" : "/articles"}>
+            <Row align={Align.CENTER}>
+                <ArrowLeft /> Back
+            </Row>
+        </Link>
     </Column>
 
     <Column>
