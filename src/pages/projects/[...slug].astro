@@ -33,7 +33,7 @@ const { Content: file } = await render(content);
                             ", "}
 
                         {user.website ? (
-                            <Link href={user.website} target="_blank">
+                            <Link href={user.website}>
                                 {user.name}
                             </Link>
                         ) : (

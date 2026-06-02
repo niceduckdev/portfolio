@@ -21,6 +21,8 @@
     --color-light-l: #121212;
     --color-mid-l: #4e4e4e;
     --color-accent-l: #6099c0;
+
+    --breakpoint-xs: 30rem;
 }
 
 @import "./content.css";
