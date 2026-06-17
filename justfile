@@ -3,7 +3,7 @@
     just --list
 
 deps:
-    clear && pnpm install
+    clear && npm install
 
 run:
-	clear && pnpm run dev
+	clear && npm run dev

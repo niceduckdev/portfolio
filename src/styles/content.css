@@ -23,7 +23,7 @@
 }
 
 #content code:not(pre > code) {
-    @apply font-code bg-mid-l dark:bg-mid text-sm py-0.5 px-1 rounded-md text-dark;
+    @apply font-code bg-mid-l dark:bg-mid text-sm py-0.5 px-1 rounded-md text-light dark:text-dark;
 }
 
 #content pre {
