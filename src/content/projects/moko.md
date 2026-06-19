@@ -15,6 +15,8 @@ highlighted: true
 
 > This project was the assignment for the Integration Project 3 course. All students were split up based on their major (Developers, AI and Deployment / DevOps). This meant that we had to communicate with external teams for the first time during our Bachelor's Degree.
 
+> Check out the repositories via [this link](https://github.com/moko-kaj-lee-mathias-matti).
+
 Our goal was to create a platform where users could buy digital board games, play them with friends and build a community without jumping between different services.
 
 > I was mainly responsible for designing and building the platform frontend. I also spent considerable time refactoring backend microservices (mainly the transport and service layers) so they worked smoothly with the frontend.
