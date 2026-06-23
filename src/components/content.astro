@@ -24,13 +24,18 @@ const isProject = "team" in content;
 ---
 
 <Base>
-    <Column align={Align.START}>
-        <Link href={isProject ?"/projects" : "/articles"}>
-            <Row align={Align.CENTER}>
-                <ArrowLeft /> Back
-            </Row>
-        </Link>
-    </Column>
+    <nav
+        class="py-2 sticky top-0 z-50 bg-light/90 dark:bg-dark/90 backdrop-blur-2xl"
+    >
+        <Column align={Align.START}>
+            <Link href={isProject ? "/projects" : "/articles"}>
+                <Row align={Align.CENTER}>
+                    <ArrowLeft />
+                    {isProject ? "Projects" : "Articles"}
+                </Row>
+            </Link>
+        </Column>
+    </nav>
 
     <Column>
         <Stack>

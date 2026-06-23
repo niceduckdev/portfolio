@@ -4,39 +4,43 @@ import Text from "@components/modular/text.astro";
 import Navigation from "@components/navigation.astro";
 import Base from "@layouts/base.astro";
 import Profile from "@components/profile.astro";
-import {getHighlightedProject} from "@services/projects.ts";
+import { getHighlightedProject } from "@services/projects.ts";
 import Card from "@components/modular/card.astro";
 
 const project = await getHighlightedProject();
 ---
 
 <Base>
-    <Navigation/>
+    <Navigation />
 
     <Column>
         <Column gap={4}>
-            <Profile/>
+            <Profile />
 
             <Column>
                 <Text>
                     Hi there! I'm Kaj, a developer and software engineer based
                     in Antwerp.
                 </Text>
-                    <Text>
-                    I am currently in my final year of Applied Computer Science at KdG University of Applied Sciences in Antwerp.
+                <Text>
+                    I recently graduated with a bachelor's degree in Applied
+                    Computer Science from KdG University of Applied Sciences in
+                    Antwerp.
                 </Text>
 
                 <Text>
-                    I enjoy the entire process of development, from designing and
-                    building <b>intuitive user interfaces</b> for websites and apps to
-                    architecting and implementing the <b>robust backend services</b> that
-                    make them work.
+                    I enjoy the entire process of development, from designing
+                    and building <b>intuitive user interfaces</b> for websites and
+                    apps to architecting and implementing the <b
+                        >robust backend services</b
+                    > that make them work.
                 </Text>
-
             </Column>
 
             <Column>
-                <p>Check out "{project.title}", one of my favourite projects!</p>
+                <p>
+                    Check out "{project.title}", one of my favourite projects!
+                </p>
                 <Card content={project} href={`/projects/${project.slug}`} />
             </Column>
         </Column>

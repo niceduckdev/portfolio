@@ -1,33 +1,36 @@
 ---
 import Column from "@components/modular/column.astro";
 import Text from "@components/modular/text.astro";
-import List from "@components/modular/list.astro"
+import List from "@components/modular/list.astro";
 import Navigation from "@components/navigation.astro";
 import Base from "@layouts/base.astro";
 import Link from "@modular/link.astro";
-import Quote from "@modular/quote.astro";
 ---
 
 <Base>
-    <Navigation/>
+    <Navigation />
 
-	<Column gap={4}>
+    <Column gap={4}>
         <Text>
-            I love building <b>backend services</b> (monolithic and microservices) that are <b>scalable</b> and <b>robust</b>.
-            On the frontend, I implement <b>responsive and intuitive interfaces</b> (web and mobile).
+            I love building <b>backend services</b> (monolithic and microservices)
+            that are <b>scalable</b> and <b>robust</b>. On the frontend, I
+            implement <b>responsive and intuitive interfaces</b> (web and mobile).
         </Text>
 
         <Text>
-            I write structured and scalable code while <b>communicating clearly</b> in team.
+            I write structured and scalable code while <b
+                >communicating clearly</b
+            > in team.
         </Text>
 
         <Text>
-            Right now, I'm in my final year of Applied Computer Science at KdG University of Applied Sciences in
-            Antwerp.
+            I recently graduated with a bachelor's degree in Applied Computer
+            Science from KdG University of Applied Sciences in Antwerp.
         </Text>
 
         <Text>
-            I have experience in a lot of different programming languages and frameworks.
+            I have experience in a lot of different programming languages and
+            frameworks.
         </Text>
 
         <List>
@@ -51,20 +54,13 @@ import Quote from "@modular/quote.astro";
                 contact [at] niceduck [dot] dev
             </Link>
             or
-            <Link href="https://linkedin.com/in/kaj-botty">
-                LinkedIn
-            </Link>
-            .
-            Check out my projects on
-            <Link href="https://github.com/niceduckdev">
-                Github
-            </Link>
+            <Link href="https://linkedin.com/in/kaj-botty"> LinkedIn </Link>
+            . Check out my projects on
+            <Link href="https://github.com/niceduckdev"> Github </Link>
 
             and take a look at my resume via
 
-            <Link href="/files/resume.pdf">
-                this link
-            </Link>
+            <Link href="/files/resume.pdf"> this link </Link>
             .
         </Text>
     </Column>
