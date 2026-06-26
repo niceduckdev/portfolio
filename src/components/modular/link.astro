@@ -1,14 +1,15 @@
 ---
-const {href} = Astro.props;
+const { href, hideActive } = Astro.props;
 const active: boolean =
     Astro.url.pathname === href || Astro.url.pathname === `${href}/`;
-const target = href.startsWith("http") || href.startsWith("mailto") ? "_blank" : "_self"
+const target =
+    href.startsWith("http") || href.startsWith("mailto") ? "_blank" : "_self";
 ---
 
 <a
-        href={href}
-        target={target}
-        class={`${active && "dark:text-accent text-accent-l"} dark:hover:text-accent hover:text-accent-l transition-colors underline cursor-pointer`}
+    href={href}
+    target={target}
+    class={`${active && !hideActive && "dark:text-accent text-accent-l"} dark:hover:text-accent hover:text-accent-l transition-colors underline cursor-pointer`}
 >
-    <slot/>
+    <slot />
 </a>

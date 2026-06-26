@@ -6,6 +6,8 @@ import Base from "@layouts/base.astro";
 import Profile from "@components/profile.astro";
 import { getHighlightedProject } from "@services/projects.ts";
 import Card from "@components/modular/card.astro";
+import Quote from "@components/modular/quote.astro";
+import Link from "@components/modular/link.astro";
 
 const project = await getHighlightedProject();
 ---
@@ -28,13 +30,10 @@ const project = await getHighlightedProject();
                     Antwerp.
                 </Text>
 
-                <Text>
-                    I enjoy the entire process of development, from designing
-                    and building <b>intuitive user interfaces</b> for websites and
-                    apps to architecting and implementing the <b
-                        >robust backend services</b
-                    > that make them work.
-                </Text>
+                <Quote>
+                    Click <Link href="/articles/about-me">here</Link> to read more
+                    about me!
+                </Quote>
             </Column>
 
             <Column>

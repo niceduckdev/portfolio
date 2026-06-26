@@ -12,7 +12,7 @@ import { getReadTime } from "@services/content";
 import type { Article } from "@models/article";
 import type { Project } from "@models/project";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import ArrowLeft from "./modular/icons/arrow-left.astro";
+import ArrowLeft from "@components/modular/icons/arrow-left.astro";
 
 interface Props {
     content: Article | Project;
@@ -42,8 +42,10 @@ const isProject = "team" in content;
             <Title>{content.title}</Title>
             <Row>
                 <p>{formatDate(content.date)}</p>
+                •
                 <p>{getReadTime(content.content.body!)} min read</p>
             </Row>
+
             <slot name="team" />
         </Stack>
 

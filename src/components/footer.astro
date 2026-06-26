@@ -1,7 +1,10 @@
 ---
-const year= new Date().getFullYear();
+import Link from "@components/modular/link.astro";
+
+const year = new Date().getFullYear();
 ---
 
-<footer class="pb-2 pt-5">
-    <p>© 2021 - {year}, Made by Kaj Botty</p>
+<footer class="pb-2 pt-5 flex flex-col md:flex-row justify-between">
+    <p>Developed by <Link href="/" hideActive={true}>Kaj Botty</Link></p>
+    <p>© 2021 - {year}</p>
 </footer>
