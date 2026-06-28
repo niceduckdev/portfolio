@@ -18,13 +18,13 @@ const { content, href } = Astro.props;
 ---
 
 <article
-        class={`group relative grid grid-cols-1 sm:grid-cols-[200px_1fr] ${getGap(4)} isolate w-full`}
+    class={`group relative grid grid-cols-1 sm:grid-cols-[200px_1fr] ${getGap(4)} isolate w-full`}
 >
     <a
         href={href}
         class="absolute inset-0 z-10 group"
         aria-label={content.title}></a>
-    <Image src={`articles/${content.slug}/${content.image}`} hover={true} fill={true} />
+    <Image src={`${content.slug}/${content.image}`} hover={true} fill={true} />
 
     <section class="py-2">
         <Column justify={Justify.BETWEEN} gap={1} fill={true}>

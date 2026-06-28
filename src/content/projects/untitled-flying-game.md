@@ -41,11 +41,11 @@ export function setup(router: Router) {
 function receive(player: PlayerId, session: SessionId, message: MessageEvent<string>) {
     const projectile = receiveProjectile(session, message);
     if (!projectile) return;
- 
+
     relayToSession(session, projectile);
     log(`Received projectile from ${player} in session ${session}`);
 }
- 
+
 async function relayToSession(session: SessionId, projectile: unknown) {
     const players: Player[] = await getAllBySession(session);
     players.forEach((player) => sendToPlayer(player.id, Type.PROJECTILE, [projectile]));
@@ -59,14 +59,14 @@ Ayla handled the 3D scene using Three.js and React Fiber. All of the models are 
 
 A big chunk of my time went into getting player locations to sync correctly across all clients. We ended up using interpolation between position updates to smooth out movement. Without it, everything looked really jittery.
 
-![Player view](player.webp)
+![Player view](/images/untitled-flying-game/player.webp)
 *View showing the player management UI*
 
-![Game](game.webp)
+![Game](/images/untitled-flying-game/game.webp)
 *A screenshot of the game*
 
 # Godot
 I also spent some time putting together a quick demo in Godot. The main takeaway: there's a reason game engines exist. Setting up the 3D scene and getting multiplayer working was way easier compared to doing it from scratch.
 
-![Godot](godot.webp)
+![Godot](/images/untitled-flying-game/godot.webp)
 *A screenshot of the Godot engine*

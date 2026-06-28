@@ -39,8 +39,8 @@ Because we only had 6 weeks, I decided to reuse a lot of the UI I designed for m
 
 You can check out [this website](https://endurance.niceduck.dev) for a detailed explanation about Endurance.
 
-![Calendar view](calendar.webp)
+![Calendar view](/images/endurance/calendar.webp)
 _View showing the calendar_
 
-![Privacy view](privacy.webp)
+![Privacy view](/images/endurance/privacy.webp)
 _The privacy toggles for our secure GDPR compliant platform_

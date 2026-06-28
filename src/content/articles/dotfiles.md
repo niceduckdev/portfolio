@@ -33,8 +33,8 @@ Here is a list of some of the tools that I use every day.
 
 And here are some screenshots of my setup.
 
-![Setup while writing this post](post.webp)
+![Setup while writing this post](/images/dotfiles/post.webp)
 *Writing an old version of this post*
 
-![Setup while editing code](code.webp)
+![Setup while editing code](/images/dotfiles/code.webp)
 *Editing the PanelController in my MVC project*

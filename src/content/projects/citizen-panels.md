@@ -26,8 +26,8 @@ This application was made in team using the following stack.
 
 My primary contribution was to the user experience. I designed and implemented the interface for the entire application over the course of 250 development hours.
 
-![Citizens](citizens.webp)
+![Citizens](/images/citizen-panels/citizens.webp)
 *Citizens visiting a panel*
 
-![Organisations](organisations.webp)
+![Organisations](/images/citizen-panels/organisations.webp)
 *Organisations managing a panel*

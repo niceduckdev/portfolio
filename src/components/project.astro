@@ -4,18 +4,16 @@ import { formatDate } from "@lib/date";
 import { getGap } from "@lib/gap";
 import { Justify } from "@lib/justify";
 import { formatMaxLength } from "@lib/length";
-import type { Article } from "@models/article";
-import type { Project } from "@models/project";
 import Column from "@modular/column.astro";
 import Image from "@modular/image.astro";
 
-const {project} = Astro.props;
+const { project } = Astro.props;
 ---
 
 <article
-        class={`group relative grid grid-cols-1 sm:grid-cols-[200px_1fr] ${getGap(4)}`}
+    class={`group relative grid grid-cols-1 sm:grid-cols-[200px_1fr] ${getGap(4)}`}
 >
-    <Image src={`articles/${project.slug}/${project.image}`} fill={true} />
+    <Image src={`${project.slug}/${project.image}`} fill={true} />
 
     <section class="py-2">
         <Column justify={Justify.BETWEEN} gap={1} fill={true}>

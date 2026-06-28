@@ -12,5 +12,5 @@ We were orignally supposed to use a mock backend like `json-server` but we also 
 
 This was my first real project in React. I learned a lot about tackling such a large project, even though I had a lot of experience using Vue and Astro.
 
-![Floorplan](floors.webp)
+![Floorplan](/images/home-automation/floors.webp)
 *Admin managing the floor plan*

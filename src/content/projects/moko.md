@@ -44,7 +44,7 @@ Having used microservices in a previous course, we decided that this architectur
 
 We created a detailed plan of the different microservices and how they would communicate with each other.
 
-![Overview of architecture](architecture.webp)
+![Overview of architecture](/images/moko/architecture.webp)
 
 We implemented all of the real-time features (Lobby, Chat and Notifications) using websockets instead of just polling for new data every X seconds. We ended up creating a gateway service that passed messages throughout the entire architecture.
 
@@ -52,7 +52,7 @@ We implemented all of the real-time features (Lobby, Chat and Notifications) usi
 The frontend of Moko was written in React using Tailwind, Zustand and Axios.
 We began the design process by experimenting in Figma before beginning to write code.
 
-![Mockup of Profile Page](profile-mockup.webp)
+![Mockup of Profile Page](/images/moko/profile-mockup.webp)
 *Profile page mockup showcasing achievements, stats and social features*
 
 These were our core principles while working on the frontend for Moko.
@@ -134,11 +134,11 @@ You can check out the following demo video for a showcase of our platform.
 
 <iframe height="315" class="rounded-md border-2" src="https://www.youtube.com/embed/cTVb87V25zY?si=hOp5FZPEUvFjKMmi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-![Store Page](store.webp)
+![Store Page](/images/moko/store.webp)
 *Store Page showing Tic Tac Toe and Checkers*
 
-![Friends Page](friends.webp)
+![Friends Page](/images/moko/friends.webp)
 *Friends Page with a fun cat picture*
 
-![Tic Tac Toe](tic-tac-toe.webp)
+![Tic Tac Toe](/images/moko/tic-tac-toe.webp)
 *Playing Tic Tac Toe against another user*
