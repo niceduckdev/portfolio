@@ -1,5 +1,5 @@
 ---
-import Content from "@components/content.astro";
+import Content from "@layouts/content.astro";
 import type { Article } from "@models/article";
 import { getArticles } from "@services/articles";
 import { getPaths, render } from "@services/content";
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 }
 
 const { content } = Astro.props;
-const { Content: file } = await render(content);
+const { Content: file, headings } = await render(content);
 ---
 
-<Content content={content} file={file} />
+<Content content={content} file={file} headings={headings} />

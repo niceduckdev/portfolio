@@ -1,5 +1,5 @@
 ---
-import Content from "@components/content.astro";
+import Content from "@layouts/content.astro";
 import Link from "@components/modular/link.astro";
 import type { Project, User } from "@models/project";
 import { getPaths, render } from "@services/content";
@@ -12,10 +12,10 @@ export async function getStaticPaths() {
 
 const { content } = Astro.props;
 const project: Project = content as Project;
-const { Content: file } = await render(content);
+const { Content: file, headings } = await render(content);
 ---
 
-<Content content={project} file={file}>
+<Content content={project} file={file} headings={headings}>
     {
         project.team && project.team.length > 0 && (
             <p slot="team">
@@ -33,9 +33,7 @@ const { Content: file } = await render(content);
                             ", "}
 
                         {user.website ? (
-                            <Link href={user.website}>
-                                {user.name}
-                            </Link>
+                            <Link href={user.website}>{user.name}</Link>
                         ) : (
                             user.name
                         )}
