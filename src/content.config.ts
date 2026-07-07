@@ -32,4 +32,8 @@ const projects = defineCollection({
     }),
 });
 
-export const collections = { articles, projects };
+const content = defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content" }),
+});
+
+export const collections = { articles, projects, content };

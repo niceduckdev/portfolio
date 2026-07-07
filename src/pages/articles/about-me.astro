@@ -1,88 +1,74 @@
 ---
-import Column from "@components/modular/column.astro";
-import Text from "@components/modular/text.astro";
-import List from "@components/modular/list.astro";
+import Content from "@layouts/content.astro";
+import { getAbout } from "@services/content";
+import { render } from "astro:content";
+import Column from "@modular/column.astro";
+import "@styles/global.css";
 import Base from "@layouts/base.astro";
-import Link from "@modular/link.astro";
-import Row from "@modular/row.astro";
-import Stack from "@modular/stack.astro";
-import Title from "@modular/title.astro";
+import type { Article } from "@models/article";
+import type { Project } from "@models/project";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import Link from "@components/modular/link.astro";
+import Row from "@components/modular/row.astro";
+import ArrowLeft from "@components/modular/icons/arrow-left.astro";
 import { Align } from "@lib/align";
+import Stack from "@components/modular/stack.astro";
+import Title from "@components/modular/title.astro";
 import { formatDate } from "@lib/date";
 import { getReadTime } from "@services/content";
-import ArrowLeft from "@components/modular/icons/arrow-left.astro";
+import { getGap } from "@lib/gap";
+import type { MarkdownHeading } from "astro";
+import OnThisPage from "@components/on-this-page.astro";
+import Footer from "@components/footer.astro";
+
+const content = await getAbout();
+const { Content: File, headings } = await render(content);
 ---
 
 <Base>
-    <nav
-        class="py-2 sticky top-0 z-50 bg-light/90 dark:bg-dark/90 backdrop-blur-2xl"
+    <div
+        class="relative w-full h-full mx-auto max-w-384 flex flex-col gap-2 xl:flex-row"
     >
-        <Column align={Align.START}>
-            <Link href="/">
-                <Row align={Align.CENTER}>
-                    <ArrowLeft />
-                    Home
-                </Row>
-            </Link>
-        </Column>
-    </nav>
+        <aside
+            class="w-full h-full mx-auto max-w-3xl flex flex-col justify-between gap-4 sticky top-0 z-50 bg-light/90 dark:bg-dark/90 backdrop-blur-2xl xl:sticky xl:top-0 xl:left-0 xl:max-w-sm xl:min-h-svh"
+        >
+            <nav class="p-4 xl:p-8">
+                <Column align={Align.START}>
+                    <Link href="/">
+                        <Row align={Align.CENTER}>
+                            <ArrowLeft />
+                            Home
+                        </Row>
+                    </Link>
+                </Column>
+            </nav>
 
-    <Column>
-        <Stack>
-            <Title>About me</Title>
-            <Row>
-                <p>{formatDate(new Date(2026, 6, 2))}</p>
-                •
-                <p>5 min read</p>
-            </Row>
+            <OnThisPage
+                headings={headings.filter((heading) => heading.depth === 1)}
+            />
+        </aside>
 
-            <slot name="team" />
-        </Stack>
+        <main
+            class="w-full h-full mx-auto shrink-0 max-w-3xl px-4 xl:my-8 overflow-hidden"
+        >
+            <Column>
+                <Stack>
+                    <Title>About me</Title>
+                    <Row>
+                        <p>{getReadTime(content.body!)} min read</p>
+                    </Row>
+                </Stack>
 
-        <Column gap={4}>
-            <Text>
-                I love building <b>backend services</b> (monolithic and microservices)
-                that are <b>scalable</b> and <b>robust</b>. On the frontend, I
-                implement <b>responsive and intuitive interfaces</b> (web and mobile).
-            </Text>
+                <section id="content" class={`flex flex-col ${getGap(2)}`}>
+                    <File />
+                </section>
+            </Column>
+            <Footer />
+        </main>
 
-            <Text>
-                I write structured and scalable code while <b
-                    >communicating clearly</b
-                > in team.
-            </Text>
-
-            <Text>
-                I recently graduated with a bachelor's degree in Applied
-                Computer Science from KdG University of Applied Sciences in
-                Antwerp.
-            </Text>
-
-            <Text>
-                I have experience in a lot of different programming languages
-                and frameworks.
-            </Text>
-
-            <List>
-                <li>Java and Spring Boot</li>
-                <li>C# and the .NET Framework</li>
-                <li>Golang</li>
-                <li>Python</li>
-                <li>Node JS & Deno</li>
-                <li>Typescript & Javascript</li>
-                <li>React, Next JS, Vue and Astro</li>
-                <li>Docker</li>
-                <li>Git</li>
-                <li>CSS and Tailwind</li>
-                <li>SQL</li>
-                <li>...</li>
-            </List>
-
-            <Text>
-                I love using tools and frameworks that make my code <b
-                    >readable</b
-                > and <b>maintainable</b>.
-            </Text>
-        </Column>
-    </Column>
+        <aside
+            class="w-full h-full mx-auto max-w-3xl xl:sticky xl:top-0 xl:left-0 xl:max-w-sm flex flex-col gap-4 xl:min-h-svh"
+        >
+        </aside>
+    </div>
 </Base>

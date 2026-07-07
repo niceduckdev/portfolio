@@ -1,6 +1,4 @@
 ---
-import Footer from "@components/footer.astro";
-import Column from "@components/modular/column.astro";
 import "@styles/global.css";
 
 interface Props {
@@ -36,12 +34,8 @@ const { title } = Astro.props;
         />
     </head>
     <body
-        class="font-sans dark:bg-dark dark:text-mid bg-dark-l text-mid-l m-auto max-w-2xl font-bold pt-5 px-5 cursor-default flex flex-col h-screen justify-between gap-4"
+        class="font-sans dark:bg-dark dark:text-mid bg-dark-l text-mid-l font-bold cursor-default"
     >
-        <Column gap={4}>
-            <slot />
-        </Column>
-
-        <Footer />
+        <slot />
     </body>
 </html>

@@ -2,17 +2,17 @@
 import Column from "@components/modular/column.astro";
 import Text from "@components/modular/text.astro";
 import Navigation from "@components/navigation.astro";
-import Base from "@layouts/base.astro";
 import Profile from "@components/profile.astro";
 import { getHighlightedProject } from "@services/projects.ts";
 import Card from "@components/modular/card.astro";
 import Quote from "@components/modular/quote.astro";
 import Link from "@components/modular/link.astro";
+import Page from "@layouts/page.astro";
 
 const project = await getHighlightedProject();
 ---
 
-<Base>
+<Page>
     <Navigation />
 
     <Column>
@@ -44,4 +44,4 @@ const project = await getHighlightedProject();
             </Column>
         </Column>
     </Column>
-</Base>
+</Page>

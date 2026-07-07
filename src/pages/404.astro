@@ -1,12 +1,12 @@
 ---
 import Navigation from "@components/navigation.astro";
-import Base from "@layouts/base.astro";
+import Page from "@layouts/page.astro";
 import Column from "@modular/column.astro";
 import Link from "@modular/link.astro";
 import Title from "@modular/title.astro";
 ---
 
-<Base>
+<Page>
     <Navigation />
 
     <Column>
@@ -14,9 +14,9 @@ import Title from "@modular/title.astro";
         <Column gap={2}>
             <p>That page was not found!</p>
             <p>
-                Try going back to the homepage via
+                Try going back to the homepage via{" "}
                 <Link href="/">this link</Link>.
             </p>
         </Column>
     </Column>
-</Base>
+</Page>

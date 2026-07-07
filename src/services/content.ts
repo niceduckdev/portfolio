@@ -1,6 +1,7 @@
 import type { Article } from "@models/article";
 import type { Project } from "@models/project";
 import { render as renderContent, type RenderResult } from "astro:content";
+import { getEntry, type CollectionEntry } from "astro:content";
 
 export function getReadTime(content: string): number {
     const words = content.trim().split(/\s+/).length;
@@ -16,4 +17,10 @@ export async function getPaths(collection: Article[] | Project[]) {
         params: { slug: content.slug },
         props: { content },
     }));
+}
+
+export async function getAbout(): Promise<CollectionEntry<"content">> {
+    const entry = await getEntry("content", "about-me");
+    if (!entry) throw new Error(`"About Me" article was not found`);
+    return entry;
 }

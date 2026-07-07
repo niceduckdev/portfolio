@@ -4,6 +4,7 @@ description: Multiplayer game where players fly around and shoot each other.
 tags: ["react", "three-js", "deno", "oak"]
 team:
   - name: "Ayla"
+    website: https://aylacarmonalozano.dev/
 image: game.webp
 date: 2026-05-04
 ---

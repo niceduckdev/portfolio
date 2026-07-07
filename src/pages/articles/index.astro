@@ -1,16 +1,16 @@
 ---
 import Column from "@components/modular/column.astro";
 import Navigation from "@components/navigation.astro";
-import Base from "@layouts/base.astro";
 import { Align } from "@lib/align";
 import Card from "@modular/card.astro";
 import type { Article } from "@models/article";
 import { getArticles } from "@services/articles";
+import Page from "@layouts/page.astro";
 
 const articles: Article[] = await getArticles();
 ---
 
-<Base>
+<Page>
     <Navigation />
 
     <Column>
@@ -31,4 +31,4 @@ const articles: Article[] = await getArticles();
             }
         </Column>
     </Column>
-</Base>
+</Page>
