@@ -1,5 +1,6 @@
 import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { z } from "astro/zod";
+import {defineCollection} from "astro:content";
 
 const articles = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/articles" }),
@@ -9,7 +10,6 @@ const articles = defineCollection({
         tags: z.array(z.string()),
         image: z.string(),
         date: z.date(),
-        hidden: z.boolean().optional(),
     }),
 });
 
@@ -26,8 +26,7 @@ const projects = defineCollection({
         tags: z.array(z.string()),
         team: z.array(user).optional(),
         image: z.string(),
-        date: z.union([z.date(), z.tuple([z.date(), z.date()])]),
-        hidden: z.boolean().optional(),
+        date: z.date(),
         highlighted: z.boolean().optional(),
     }),
 });

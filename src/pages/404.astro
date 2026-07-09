@@ -4,18 +4,20 @@ import Page from "@layouts/page.astro";
 import Column from "@modular/column.astro";
 import Link from "@modular/link.astro";
 import Title from "@modular/title.astro";
+import {Gap} from "@lib/gap";
 ---
 
 <Page>
-    <Navigation />
+    <Navigation/>
 
-    <Column>
+    <Column gap={Gap.SMALL}>
         <Title>404</Title>
-        <Column gap={2}>
-            <p>That page was not found!</p>
+        <Column gap={Gap.NONE}>
             <p>
+                That page was not found!<br/>
                 Try going back to the homepage via{" "}
-                <Link href="/">this link</Link>.
+                <Link href="/">this link</Link>
+                .
             </p>
         </Column>
     </Column>

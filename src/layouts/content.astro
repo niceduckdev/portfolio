@@ -2,79 +2,87 @@
 import Column from "@modular/column.astro";
 import "@styles/global.css";
 import Base from "@layouts/base.astro";
-import type { Article } from "@models/article";
-import type { Project } from "@models/project";
-import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import Link from "@components/modular/link.astro";
 import Row from "@components/modular/row.astro";
 import ArrowLeft from "@components/modular/icons/arrow-left.astro";
-import { Align } from "@lib/align";
+import {Align} from "@lib/align";
 import Stack from "@components/modular/stack.astro";
 import Title from "@components/modular/title.astro";
-import { formatDate } from "@lib/date";
-import { getReadTime } from "@services/content";
-import { getGap } from "@lib/gap";
-import type { MarkdownHeading } from "astro";
+import {formatDate} from "@lib/date";
+import type {MarkdownHeading} from "astro";
 import OnThisPage from "@components/on-this-page.astro";
-import Footer from "@components/footer.astro";
+import {Gap} from "@lib/gap";
 
 interface Props {
-    content: Article | Project;
-    file: AstroComponentFactory;
-    headings: MarkdownHeading[];
+    title: string;
+    meta?: {
+        date: Date;
+        readTime: number;
+    }
+    back: {
+        title: string;
+        href: string;
+    };
+    headings?: MarkdownHeading[];
 }
 
-const { content, file: File, headings } = Astro.props;
-const isProject = "team" in content;
+const {title, meta, back, headings} = Astro.props
 ---
 
 <Base>
     <div
-        class="relative w-full h-full mx-auto max-w-384 flex flex-col gap-2 xl:flex-row"
+            class="relative w-full h-full mx-auto max-w-384 flex flex-col gap-2 xl:flex-row"
     >
         <aside
-            class="w-full h-full mx-auto max-w-3xl flex flex-col justify-between gap-4 sticky top-0 z-50 bg-light/90 dark:bg-dark/90 backdrop-blur-2xl xl:sticky xl:top-0 xl:left-0 xl:max-w-sm xl:min-h-svh"
+                class="w-full h-full mx-auto max-w-3xl flex flex-col justify-between gap-4 sticky top-0 z-50 bg-light/90 dark:bg-dark/90 backdrop-blur-2xl xl:sticky xl:top-0 xl:left-0 xl:max-w-sm xl:min-h-svh"
         >
             <nav class="p-4 xl:p-8">
                 <Column align={Align.START}>
-                    <Link href={isProject ? "/projects" : "/articles"}>
+                    <Link href={back.href}>
                         <Row align={Align.CENTER}>
-                            <ArrowLeft />
-                            {isProject ? "Projects" : "Articles"}
+                            <ArrowLeft/>
+                            {back.title}
                         </Row>
                     </Link>
                 </Column>
             </nav>
 
-            <OnThisPage
-                headings={headings.filter((heading) => heading.depth === 1)}
-            />
+            {
+                headings && (
+                            <OnThisPage
+                                    headings={headings.filter((heading) => heading.depth === 1)}
+                            />
+                )
+            }
         </aside>
 
         <main
-            class="w-full h-full mx-auto shrink-0 max-w-3xl px-4 xl:my-8 overflow-hidden"
+                class="w-full h-full mx-auto shrink-0 max-w-3xl px-4 xl:my-8 overflow-hidden"
         >
-            <Column>
+            <Column gap={Gap.SMALL}>
                 <Stack>
-                    <Title>{content.title}</Title>
-                    <Row>
-                        <p>{formatDate(content.date)}</p>
-                        •
-                        <p>{getReadTime(content.content.body!)} min read</p>
-                    </Row>
+                    <Title>{title}</Title>
+                    {
+                        meta && (
+                                    <Row gap={Gap.SMALL}>
+                                        <p>{formatDate(meta.date)}</p>
+                                        •
+                                        <p>{meta.readTime} min read</p>
+                                    </Row>
+                        )
+                    }
 
-                    <slot name="team" />
+                    <slot name="team"/>
                 </Stack>
 
-                <section id="content" class={`flex flex-col ${getGap(2)}`}>
-                    <File />
+                <section id="content" class={`flex flex-col ${Gap.MEDIUM}`}>
+                    <slot name="content"/>
                 </section>
             </Column>
-            <Footer />
         </main>
 
         <aside
-            class="w-full h-full mx-auto max-w-3xl xl:sticky xl:top-0 xl:left-0 xl:max-w-sm flex flex-col gap-4 xl:min-h-svh"
+                class="w-full h-full mx-auto max-w-3xl xl:sticky xl:top-0 xl:left-0 xl:max-w-sm flex flex-col gap-4 xl:min-h-svh"
         >
         </aside>
     </div>

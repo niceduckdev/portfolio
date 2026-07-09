@@ -1,45 +1,53 @@
 ---
-import Content from "@layouts/content.astro";
+import {render} from 'astro:content';
 import Link from "@components/modular/link.astro";
-import type { Project, User } from "@models/project";
-import { getPaths, render } from "@services/content";
-import { getProjects } from "@services/projects";
+import {getAllProjects} from "@services/projects";
+import Layout from "@layouts/content.astro";
+import {getReadTime} from "@lib/time";
+import {getSeparator} from "@lib/list";
 
 export async function getStaticPaths() {
-    const projects: Project[] = await getProjects();
-    return getPaths(projects);
+    const projects = await getAllProjects();
+    return projects.map((project) => ({
+        params: {slug: project.id},
+        props: project,
+    }));
 }
 
-const { content } = Astro.props;
-const project: Project = content as Project;
-const { Content: file, headings } = await render(content);
+const project = Astro.props;
+const {Content, headings} = await render(project);
 ---
 
-<Content content={project} file={file} headings={headings}>
-    {
-        project.team && project.team.length > 0 && (
-            <p slot="team">
-                Built together with{" "}
-                {project.team.map((user: User, index) => (
-                    <>
-                        {index > 0 &&
-                            project.team.length > 2 &&
-                            index === project.team.length - 1 &&
-                            " and "}
-                        {index > 0 && project.team.length === 2 && " and "}
-                        {index > 0 &&
-                            project.team.length > 2 &&
-                            index < project.team.length - 1 &&
-                            ", "}
+<Layout
+        title={project.data.title}
+        meta={{
+            date: project.data.date,
+            readTime: getReadTime(project.body ?? "")
+        }}
+        back={{title: "Projects", href: "/projects"}}
+        headings={headings}
+>
+    <Fragment slot="team">
+        {project.data.team && (
+                <p>
+                    Built together with{" "}
+                    {project.data.team?.map((user, index: number) => (
+                            <Fragment>
+                                {getSeparator(index, project.data.team?.length ?? 0)}
+                                {
+                                    user.website ? (
+                                            <Link href={user.website}>{user.name}</Link>
+                                    ) : (
+                                        user.name
+                                    )
+                                }
+                            </Fragment>
+                    ))}
+                </p>
+        )}
+    </Fragment>
 
-                        {user.website ? (
-                            <Link href={user.website}>{user.name}</Link>
-                        ) : (
-                            user.name
-                        )}
-                    </>
-                ))}
-            </p>
-        )
-    }
-</Content>
+    <Fragment slot="content">
+        <Content/>
+    </Fragment>
+</Layout>

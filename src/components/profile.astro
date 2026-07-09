@@ -5,42 +5,43 @@ import Link from "@modular/link.astro";
 import Linkedin from "@modular/icons/linkedin.astro";
 import Mail from "@modular/icons/mail.astro";
 import Github from "@modular/icons/github.astro";
-import { Align } from "@lib/align.ts";
+import {Align} from "@lib/align.ts";
 import Resume from "@modular/icons/resume.astro";
+import {Gap} from "@lib/gap";
 ---
 
-<section class="flex flex-col xs:flex-row xs:items-center gap-4 relative z-0">
+<section class={`flex flex-col xs:flex-row xs:items-center ${Gap.MEDIUM} relative z-0`}>
     <img
-        src="/images/kaj.png"
-        alt="A picture of Kaj"
-        class="rounded-md border-2 max-w-34 size-34"
+            src="/images/kaj.png"
+            alt="A picture of Kaj"
+            class="rounded-md border-2 max-w-34 size-34"
     />
 
-    <Column>
+    <Column gap={Gap.SMALL}>
         <Link href="https://linkedin.com/in/kaj-botty">
             <Row align={Align.CENTER}>
-                <Linkedin />
+                <Linkedin/>
                 LinkedIn
             </Row>
         </Link>
 
         <Link href="mailto:contact@niceduck.dev">
             <Row align={Align.CENTER}>
-                <Mail />
+                <Mail/>
                 Email
             </Row>
         </Link>
 
         <Link href="https://github.com/niceduckdev">
             <Row align={Align.CENTER}>
-                <Github />
+                <Github/>
                 Github
             </Row>
         </Link>
 
         <Link href="/files/resume.pdf">
             <Row align={Align.CENTER}>
-                <Resume />
+                <Resume/>
                 Resume
             </Row>
         </Link>

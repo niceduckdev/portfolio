@@ -3,7 +3,7 @@ import Column from "@components/modular/column.astro";
 import Text from "@components/modular/text.astro";
 import Navigation from "@components/navigation.astro";
 import Profile from "@components/profile.astro";
-import { getHighlightedProject } from "@services/projects.ts";
+import {getHighlightedProject} from "@services/projects.ts";
 import Card from "@components/modular/card.astro";
 import Quote from "@components/modular/quote.astro";
 import Link from "@components/modular/link.astro";
@@ -13,34 +13,47 @@ const project = await getHighlightedProject();
 ---
 
 <Page>
-    <Navigation />
+    <Navigation/>
 
     <Column>
-        <Column gap={4}>
-            <Profile />
+        <Column>
+            <Profile/>
 
             <Column>
                 <Text>
                     Hi there! I'm Kaj, a software developer based in Antwerp.
                 </Text>
                 <Text>
-                    I recently graduated with a bachelor's degree in Applied
-                    Computer Science from KdG University of Applied Sciences in
+                    I recently graduated with a <b>bachelor's degree in Applied
+                    Computer Science</b> from KdG University of Applied Sciences in
                     Antwerp.
                 </Text>
 
                 <Quote>
-                    You should probably read <Link href="/articles/about-me"
-                        >this article</Link
-                    > to learn more about me!
+                    You should probably read{" "}
+                    <Link href="/articles/about-me"
+                    >this article
+                    </Link
+                    >
+                    {" "}
+                    to learn more about me!
                 </Quote>
             </Column>
 
             <Column>
-                <p>
-                    Check out "{project.title}", one of my favourite projects!
-                </p>
-                <Card content={project} href={`/projects/${project.slug}`} />
+                <Text>
+                    Check out "{project.data.title}", one of my favourite
+                    projects!
+                </Text>
+                <Card
+                        title={project.data.title}
+                        date={project.data.date}
+                        description={project.data.description}
+                        tags={project.data.tags}
+
+                        href={`/projects/${project.id}`}
+                        image={`${project.id}/${project.data.image}`}
+                />
             </Column>
         </Column>
     </Column>

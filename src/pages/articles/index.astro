@@ -1,31 +1,36 @@
 ---
 import Column from "@components/modular/column.astro";
 import Navigation from "@components/navigation.astro";
-import { Align } from "@lib/align";
-import Card from "@modular/card.astro";
-import type { Article } from "@models/article";
-import { getArticles } from "@services/articles";
 import Page from "@layouts/page.astro";
+import {Align} from "@lib/align";
+import Card from "@modular/card.astro";
+import Text from "@modular/text.astro";
+import {getAllArticles} from "@services/articles";
 
-const articles: Article[] = await getArticles();
+const articles = await getAllArticles();
 ---
 
 <Page>
-    <Navigation />
+    <Navigation/>
 
     <Column>
-        <p>
+        <Text>
             Learn more about my experience as a student and software engineer.
-        </p>
+        </Text>
 
-        <Column align={Align.START} gap={4}>
+        <Column align={Align.START}>
             {
-                articles.map((article: Article) => {
+                articles.map((article) => {
                     return (
-                        <Card
-                            content={article}
-                            href={`/articles/${article.slug}`}
-                        />
+                            <Card
+                                    title={article.data.title}
+                                    date={article.data.date}
+                                    description={article.data.description}
+                                    tags={article.data.tags}
+
+                                    href={`/articles/${article.id}`}
+                                    image={`${article.id}/${article.data.image}`}
+                            />
                     );
                 })
             }

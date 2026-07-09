@@ -1,41 +1,53 @@
 ---
-import { Align } from "@lib/align";
-import { formatDate } from "@lib/date";
-import { getGap } from "@lib/gap";
-import { Justify } from "@lib/justify";
-import { formatMaxLength } from "@lib/length";
-import type { Article } from "@models/article";
-import type { Project } from "@models/project";
+import {Align} from "@lib/align";
+import {formatDate} from "@lib/date";
+import {Justify} from "@lib/justify";
+import {formatMaxLength} from "@lib/length";
 import Column from "@modular/column.astro";
 import Image from "@modular/image.astro";
+import {Gap} from "@lib/gap";
+import {getSeparator} from "@lib/list";
 
 interface Props {
-    content: Article | Project;
+    title: string;
+    date: Date;
+    description: string;
+    tags: string[];
+
     href: string;
+    image: string;
 }
 
-const { content, href } = Astro.props;
+const {title, date, description, tags, href, image} = Astro.props;
 ---
 
 <article
-    class={`group relative grid grid-cols-1 sm:grid-cols-[200px_1fr] ${getGap(4)} isolate w-full`}
+        class={`group relative grid grid-cols-1 sm:grid-cols-[200px_1fr] ${Gap.MEDIUM} isolate w-full`}
 >
     <a
-        href={href}
-        class="absolute inset-0 z-10 group"
-        aria-label={content.title}></a>
-    <Image src={`${content.slug}/${content.image}`} hover={true} fill={true} />
+            href={href}
+            class="absolute inset-0 z-10 group"
+            aria-label={title}></a>
+    <Image src={image} hover={true} fill={true}/>
 
     <section class="py-2">
-        <Column justify={Justify.BETWEEN} gap={1} fill={true}>
-            <Column align={Align.START} gap={1}>
-                <Column gap={0}>
-                    <h2 class="text-lg">{content.title}</h2>
-                    <p class="text-sm">{formatDate(content.date)}</p>
+        <Column justify={Justify.BETWEEN} gap={Gap.SMALL} fill={true}>
+            <Column align={Align.START} gap={Gap.SMALL}>
+                <Column gap={Gap.NONE}>
+                    <h2 class="text-lg">{title}</h2>
+                    <p class="text-sm">{formatDate(date)}</p>
                 </Column>
-                <p>{formatMaxLength(content.description, 75)}</p>
+
+                <p>{formatMaxLength(description, 75)}</p>
             </Column>
-            <p>{content.tags.join("  |  ")}</p>
+            <p>
+                {tags.map((tag, index: number) => (
+                        <Fragment>
+                            {getSeparator(index, tags.length)}
+                            {tag}
+                        </Fragment>
+                ))}
+            </p>
         </Column>
     </section>
 </article>

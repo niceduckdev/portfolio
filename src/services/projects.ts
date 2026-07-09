@@ -1,16 +1,12 @@
-import { sortOnDate } from "@lib/sort";
-import { fromContent, type Project } from "@models/project";
 import { getCollection } from "astro:content";
+import {sortOnDate} from "@lib/sort.ts";
 
-export async function getProjects(): Promise<Project[]> {
-    return sortOnDate(
-        (await getCollection("projects")).map((project) =>
-            fromContent(project),
-        ),
-    ).filter((project) => !project.hidden)
+export async function getHighlightedProject() {
+    const projects = await getCollection("projects");
+    return projects.filter((project) => project.data.highlighted)[0]
 }
 
-export async function getHighlightedProject(): Promise<Project> {
-    const projects = await getProjects();
-    return projects.filter((project) => project.highlighted)[0];
+export async function getAllProjects() {
+    const projects = await getCollection("projects");
+    return sortOnDate(projects);
 }

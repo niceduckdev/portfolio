@@ -1,16 +1,31 @@
 ---
-import Content from "@layouts/content.astro";
-import type { Article } from "@models/article";
-import { getArticles } from "@services/articles";
-import { getPaths, render } from "@services/content";
+import {render} from 'astro:content';
+import Layout from "@layouts/content.astro";
+import {getReadTime} from "@lib/time";
+import {getAllArticles} from "@services/articles";
 
 export async function getStaticPaths() {
-    const articles: Article[] = await getArticles(true);
-    return getPaths(articles);
+    const articles = await getAllArticles();
+    return articles.map((article) => ({
+        params: {slug: article.id},
+        props: article,
+    }));
 }
 
-const { content } = Astro.props;
-const { Content: file, headings } = await render(content);
+const article = Astro.props;
+const {Content, headings} = await render(article);
 ---
 
-<Content content={content} file={file} headings={headings} />
+<Layout
+        title={article.data.title}
+        meta={{
+            date: article.data.date,
+            readTime: getReadTime(article.body ?? "")
+        }}
+        back={{title: "Articles", href: "/articles"}}
+        headings={headings}
+>
+    <Fragment slot="content">
+        <Content/>
+    </Fragment>
+</Layout>

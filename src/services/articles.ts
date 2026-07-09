@@ -1,11 +1,7 @@
-import { sortOnDate } from "@lib/sort";
-import { fromContent, type Article } from "@models/article";
-import { getCollection } from "astro:content";
+import {getCollection} from "astro:content";
+import {sortOnDate} from "@lib/sort.ts";
 
-export async function getArticles(all: boolean = false): Promise<Article[]> {
-    const articles = (await getCollection("articles"))
-        .map((article) => fromContent(article))
-        .filter((article) => all || !article.hidden);
-
+export async function getAllArticles() {
+    const articles = await getCollection("articles");
     return sortOnDate(articles);
 }

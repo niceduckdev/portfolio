@@ -1,9 +1,15 @@
 ---
-import { getGap } from "@lib/gap";
-import { getAlign } from "@lib/align";
-const { gap, align, wrap } = Astro.props;
+import {Align} from "@lib/align";
+import {Gap} from "@lib/gap";
+
+interface Props {
+    gap?: Gap;
+    align?: Align;
+    wrap?: boolean;
+}
+const {gap, align, wrap} = Astro.props;
 ---
 
-<section class={`flex flex-row ${getGap(gap)} ${getAlign(align)} ${wrap === true && "flex-wrap"}`}>
-	<slot />
+<section class={`flex flex-row ${gap ?? Gap.MEDIUM} ${align} ${wrap ? "flex-wrap" : ""}`}>
+    <slot/>
 </section>
