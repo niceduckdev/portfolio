@@ -5,21 +5,17 @@ import Link from "@modular/link.astro";
 import {Gap} from "@lib/gap";
 ---
 
-<nav
-        class="py-2 sticky top-0 z-50 bg-light/90 dark:bg-dark/90 backdrop-blur-2xl"
->
-    <Column gap={Gap.SMALL}>
-        <Column gap={Gap.NONE}>
-            <h1 class="text-3xl dark:text-accent text-accent-l font-bold">
-                Kaj Botty
-            </h1>
-            <h2>Software Developer</h2>
-        </Column>
-
-        <Row gap={Gap.SMALL} wrap={true}>
-            <Link href="/">Home</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/articles">Articles</Link>
-        </Row>
+<nav class={`flex flex-col ${Gap.SMALL} lg:flex-row lg:justify-between lg:items-center py-2 sticky top-0 z-50 bg-light/90 dark:bg-dark/90 backdrop-blur-2xl`}>
+    <Column gap={Gap.NONE}>
+        <h1 class="text-3xl dark:text-accent text-accent-l font-bold">
+            Kaj Botty
+        </h1>
+        <h2>Software Developer</h2>
     </Column>
+
+    <Row gap={Gap.SMALL} wrap={true}>
+        <Link href="/">Home</Link>
+        <Link href="/projects">Projects</Link>
+        <Link href="/articles">Articles</Link>
+    </Row>
 </nav>
