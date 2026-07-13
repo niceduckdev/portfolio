@@ -5,7 +5,7 @@ const path: string = `/images/${src}`;
 
 const outer = "relative rounded-md border-2 w-full min-h-36 overflow-hidden";
 const inner =
-    "absolute inset-0 bg-cover bg-center bg-no-repeat " +
+    "absolute inset-0 w-full h-full object-cover " +
     "transform-gpu transition-transform duration-300 ease-out";
 const zoom = "group-hover:scale-[1.05]";
 ---
@@ -13,9 +13,10 @@ const zoom = "group-hover:scale-[1.05]";
 {
     fill ? (
     <section class={outer}>
-        <section
-                style={`background-image: url('${path}')`}
-                class={`${inner} ${hover ? zoom : ""}`}
+        <img
+                src={path}
+                alt={src}
+                class={`${inner} ${hover ? zoom : ""} border-none`}
         />
     </section>
         ) : (
